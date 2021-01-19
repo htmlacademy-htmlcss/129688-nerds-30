@@ -1,7 +1,7 @@
 # Личный проект «Нёрдс»
 
 * Студент: [Василий Шац](https://up.htmlacademy.ru/htmlcss/30/user/129688).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Иовлев](https://htmlacademy.ru/profile/skywalker).
 
 ---
 
