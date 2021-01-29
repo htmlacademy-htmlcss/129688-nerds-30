@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>HTML Academy: Нёрдс</title>
@@ -7,23 +7,25 @@
     <link rel="icon" href="icon.svg" type="image/svg+×ml">
     <link rel="apple-touch-icon" href="apple.png">
     <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-      <nav>
-        <a href="index.html">
+<body class="page-body">
+    <header class="main-header">
+      <nav class="main-navigation">
+        <a class="main-header-logo" href="index.html">
             <img src="img/nerds-logo.svg" height="49" width="140" alt="Перейти на главную страницу сайта Нёрдс">
         </a>
-         <ul>
+         <ul class="site-navigation">
              <li><a href="#">Студия</a></li>
              <li><a href="#">Клиенты</a></li>
              <li><a href="catalog.html">Магазин</a></li>
              <li><a href="#">Контакты</a></li>
         </ul>
-        <a href="#">Корзина</a>
+        <a class="basket-link" href="#">Корзина</a>
       </nav>
     </header>
-    <main>
+    <main class="container">
        <section><!-- фильтры -->
             <h2>фильтр шаблонов</h2>
             <form method="get" action="https://echo.htmlacademy.ru/">
