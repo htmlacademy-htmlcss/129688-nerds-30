@@ -2,37 +2,37 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/roboto.woff2") format("woff2"),
-       url("/fonts/roboto.woff") format("woff");
+  src: url("../fonts/roboto.woff2") format("woff2"),
+       url("../fonts/roboto.woff") format("woff");
 }
 
 @font-face {
   font-family: "Roboto";
   font-style: medium;
   font-weight: 500;
-  src: url("/fonts/robotomedium.woff2") format("woff2"),
-       url("/fonts/robotomedium.woff") format("woff");
+  src: url("../fonts/robotomedium.woff2") format("woff2"),
+       url("../fonts/robotomedium.woff") format("woff");
 }
 
 @font-face {
   font-family: "Roboto";
   font-style: bold;
   font-weight: 700;
-  src: url("/fonts/robotobold.woff2") format("woff2"),
-       url("/fonts/robotobold.woff") format("woff");
+  src: url("../fonts/robotobold.woff2") format("woff2"),
+       url("../fonts/robotobold.woff") format("woff");
 }
 
 :root {
-  --basic-light-grey: #EEEEEE;
+  --basic-light-grey: #eeeeee;
   --basic-black: #000000;
   --basic-dark: #283136;
   --basic-white: #ffffff;
   --basic-grey: #666666;
   --dark-grey:#444444;
-  --basket-grey:#A6A6A6;
-  --light-red:#FB565A;
-  --green:#00CA74;
-  --yellow:#EFC849;
+  --basket-grey:#a6a6a6;
+  --light-red:#fb565a;
+  --green:#00ca74;
+  --yellow:#efc849;
 }
 
 body {
@@ -57,11 +57,11 @@ img {
   height: auto;/*автоматическую высоту, чтобы изменение размеров было пропорциональным*/
 }
 
-.main-header{
+.main-header {
   background-color:var(--basic-light-grey);
 }
 
-.main-navigation{
+.main-navigation {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -69,11 +69,11 @@ img {
   color: var(--basic-black);
   background-color: transparent;
 }
-.site-navigation{
+.site-navigation {
   list-style: none;
 }
 
-.site-navigation, .content-uppercase, .basket-link {
+.site-navigation, .content-uppercase, .basket-link, .services-list-title {
   text-transform: uppercase;
 }
 /* User navigation */
@@ -88,133 +88,145 @@ img {
 .site-navigation a:focus {
   color: var(--light-red);
 }
-.visually-hidden{
+.visually-hidden {
   display: none;
 }
-.features-list{
+.features-list {
   list-style: none;
 }
-.feature-item-title{
+.feature-item-title {
 font-weight: 500;
 font-size: 55px;
 line-height: 55px;
-color: var(--basic-black:);
+color: var(--basic-black);
 }
-.learn-more-button{
+.learn-more-button {
   background-color:  var(--light-red);
   color:  var(--basic-white);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
 }
 
 
 /*Sirvices*/
-.services-list-title{
+.services-list-title {
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
 }
-.services-list-appeal{
+.services-list-appeal {
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
 }
-.services-button{
+.services-button {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
+  text-transform: uppercase;
   color:var(--basic-white);
 }
-.button-red{
+.button-red {
   background-color: var(--light-red);
 }
-.button-green{
+.button-green {
   background-color: var(--green);
 }
 
-.button-yellow{
+.button-yellow {
   background-color: var(--yellow);
 }
 /*About*/
-.about-desc{
+.about-desc {
   font-weight: 500;
   font-size: 45px;
   line-height: 45px;
+  color: var(--basic-black);
 }
-.about-desc-slogan{
+.about-desc-slogan {
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
 }
-.about-desc-slogan .content-uppercase{
+.about-desc-slogan .content-uppercase {
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
 }
-.about-list-item{
+.about-list-item {
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
 }
-.about .content-uppercase{
+.about .content-uppercase {
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
 }
-.about-list-item{
+.about-list-item {
   list-style: none;
 }
-.about-like{
+.about-like {
   font-weight: bold;
   font-size: 16px;
   line-height: 24px;
+  text-transform: uppercase;
+  color: var(--basic-black);
 }
-.percent-list-item{
+.percent-list-item {
   list-style: none;
 }
-.percent-list-level{
+.percent-list-level {
   font-weight: bold;
   font-size: 45px;
   line-height: 64px;
+  color: var(--basic-black);
 }
-.level-desc{
+.level-desc {
   font-weight: normal;
   font-size: 16px;
   line-height: 18px;
 }
 /*Partners*/
-.partners-list{
+.partners-list {
   list-style: none;
 }
 /*footer*/
 
-.main-footer-address h3{
+.main-footer-address h3 {
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
+  color: var(--basic-black);
+
 }
-.main-footer-content{
+.main-footer-content {
   font-weight: normal;
   font-size: 16px;
   line-height: 18px;
 }
-.main-footer-button{
+.main-footer-button {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
+  text-transform: uppercase;
   color:var(--basic-white);
   background-color: var(--light-red);
 }
 
 /*Social*/
-.main-footer-social h2{
+.main-footer-social h2 {
   font-weight: bold;
   font-size: 36px;
   line-height: 36px;
+  color: var(--basic-black);
 }
-.main-footer-social p{
+.main-footer-social p {
    font-weight: normal;
    font-size: 16px;
   line-height: 22px;
 }
-.social-list{
+.social-list {
   list-style: none;
 }
