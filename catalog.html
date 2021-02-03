@@ -1,63 +1,67 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>HTML Academy: Нёрдс</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" href="icon.svg" type="image/svg+×ml">  
+    <link rel="icon" href="icon.svg" type="image/svg+×ml">
+    <link rel="apple-touch-icon" href="apple.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-      <nav>
-        <a href="index.html">
-            <img src="img/nerds-logo.svg" height="49" width="140" alt="Логотип Нёрдс">
+<body class="page-body">
+    <header class="main-header">
+      <nav class="main-navigation">
+        <a class="main-header-logo" href="index.html">
+            <img src="img/nerds-logo.svg" height="49" width="140" alt="Перейти на главную страницу сайта Нёрдс">
         </a>
-         <ul>
+         <ul class="site-navigation">
              <li><a href="#">Студия</a></li>
              <li><a href="#">Клиенты</a></li>
              <li><a href="catalog.html">Магазин</a></li>
              <li><a href="#">Контакты</a></li>
-        </ul> 
-        <a href="#">Корзина</a>
-      </nav>  
+        </ul>
+        <a class="basket-link" href="#">Корзина</a>
+      </nav>
+      <h1 class="catalog-title">Магазин готовых шаблонов</h1>
     </header>
-    <main>
-       <section><!-- фильтры -->
-            <h2>фильтр шаблонов</h2>
-            <form method="get" action="https://echo.htmlacademy.ru/">
+    <main class="container">
+       <section class="filters"><!-- фильтры -->
+            <h2 class="visually-hidden">фильтр шаблонов</h2>
+            <form class="filters-form" method="get" action="https://echo.htmlacademy.ru/">
                 <fieldset>
-                    <legend>Стоимость:</legend>
-                    <input type="range" min="0" max="15000" step="10"><br>
+                    <legend class="legend-title">Стоимость:</legend>
+                    <input class="range" type="range" min="0" max="15000" step="10"><br>
 
-                    <label for="from">От</label>                    
-                    <input type="number" name="start-cost" min="1" max="15000" id="from">
-
-                    <label for="to">До</label>
-                    <input type="number" name="end-cost" min="1" max="15000" id="to">
+                    <label class="range-label" for="from">От</label>
+                    <input class="range-input" type="number" name="start-cost" min="1" max="15000" id="from">
+                    <label class="range-label" for="to">До</label>
+                    <input class="range-input" type="number" name="end-cost" min="1" max="15000" id="to">
                 </fieldset>
 
 
                 <fieldset>
-                    <legend>Сетка:</legend>
+                    <legend class="grid-view">Сетка:</legend>
                     <ul>
                       <li>
-                        <input type="radio" name="grid-view" value="adaptive" id="adaptive-grid" checked>
-                        <label for="adaptive-grid">Адаптивная</label>
+                        <input class="grid-view-radio" type="radio" name="grid-view" value="adaptive" id="adaptive-grid" checked>
+                        <label class="grid-view-label" for="adaptive-grid">Адаптивная</label>
                       </li>
                       <li>
-                        <input type="radio" name="grid-view" value="fixed" id="fixed-grid">
-                        <label for="fixed-grid">Фиксированная</label>
+                        <input class="grid-view-radio" type="radio" name="grid-view" value="fixed" id="fixed-grid">
+                        <label class="grid-view-label" for="fixed-grid">Фиксированная</label>
                       </li>
                       <li>
-                        <input type="radio" name="grid-view" value="rubber" id="rubber-grid">
-                        <label for="rubber-grid">Резиновая</label>
+                        <input class="grid-view-radio" type="radio" name="grid-view" value="rubber" id="rubber-grid">
+                        <label class="grid-view-label" for="rubber-grid">Резиновая</label>
                       </li>
                     </ul>
                  </fieldset>
 
 
-                <fieldset>
-                    <legend>Особенности:</legend>
+                <fieldset class="features-fieldset">
+                    <legend class="features-title">Особенности:</legend>
                     <ul>
                         <li>
                             <input type="checkbox" name="features-slider" id="filter-slider" checked>
@@ -81,43 +85,43 @@
                         </li>
                     </ul>
                 </fieldset>
-              <button type="submit">Показать</button>
-            </form>    
+              <button class="features-button" type="submit">Показать</button>
+            </form>
        </section>
-       <section>
-        <h2>Сортировка</h2>
+       <section class="sort-section">
+        <h2 class="visually-hidden">Сортировка</h2>
         <fieldset>
-            <legend>Сортировать:</legend>
-            <ul>
-                <li><a href="">По цене</a></li>
-                <li><a href="">По типу</a></li>
-                <li><a href="">По названию</a></li>
+            <legend class="legend-title">Сортировать:</legend>
+            <ul class="sort-section-list">
+                <li><a class="sort-section-link" href="">По цене</a></li>
+                <li><a class="sort-section-link" href="">По типу</a></li>
+                <li><a class="sort-section-link" href="">По названию</a></li>
                 <li><span></span></li><!-- по-убыванию -->
                 <li><span></span></li><!-- по-позрастанию -->
             </ul>
-        </fieldset>        
+        </fieldset>
        </section>
-       <section>
-           <h2>Миниатюры</h2>
-            <ul>
+       <section class="results">
+           <h2 class="visually-hidden">Миниатюры</h2>
+            <ul class="results-list">
                <li>
                    <div><!-- контейнер для трех точек -->
 
                    </div>
-                   <a href="#"><img src="img/img-sedona.jpg" width="358" height="578" alt="sedona-mini"></a>
-                   <div><!-- контейнер для hover --> 
-                    <h3>SEDONA</h3>
+                   <a href="#"><img src="img/img-sedona.jpg" width="358" height="578" alt="Миниатура сайта SEDONA"></a>
+                   <div class="results-hover"><!-- контейнер для hover -->
+                    <h3 class="results-hover-title">SEDONA</h3>
                     <p>Информационный сайт<br>для туристов</p>
-                    <a href="#">9 900<span>P</span></a>                     
-                   </div> 
+                    <a href="#">9 900<span>P</span></a>
+                   </div>
                </li>
                <li>
                    <div><!-- контейнер для трех точек -->
 
                    </div>
-                   <a href="#"><img src="img/img-pink.jpg" width="358" height="578" alt="pink-mini"></a>
-                   <div><!-- контейнер для hover -->  
-                    <h3>Pink App</h3>
+                   <a href="#"><img src="img/img-pink.jpg" width="358" height="578" alt="Миниатура сайта Pink"></a>
+                   <div class="results-hover"><!-- контейнер для hover -->
+                    <h3 class="results-hover-title">Pink App</h3>
                     <p>Продвинутый лендинг<br>приложения для iOS и Android</p>
                     <a href="#">9 900<span>P</span></a>
                    </div>
@@ -126,9 +130,9 @@
                    <div><!-- контейнер для трех точек -->
 
                    </div>
-                   <a href="#"><img src="img/img-barbershop.jpg" width="358" height="578" alt="borodinski-mini"></a>
-                    <div><!-- контейнер для hover -->  
-                    <h3>Barbershop</h3>
+                   <a href="#"><img src="img/img-barbershop.jpg" width="358" height="578" alt="Миниатура сайта Барбершоп"></a>
+                    <div class="results-hover"><!-- контейнер для hover -->
+                    <h3 class="results-hover-title">Barbershop</h3>
                     <p>Сайт салона красоты.<br>Для мужчин, да.</p>
                     <a href="#">9 900<span>P</span></a>
                     </div>
@@ -137,9 +141,9 @@
                    <div><!-- контейнер для трех точек -->
 
                    </div>
-                   <a href="#"><img src="img/img-mishka.jpg" width="358" height="578" alt="mishka-mini"></a>
-                    <div><!-- контейнер для hover -->  
-                    <h3>Mishka</h3>
+                   <a href="#"><img src="img/img-mishka.jpg" width="358" height="578" alt="Миниатура сайта Mishka"></a>
+                    <div class="results-hover"><!-- контейнер для hover -->
+                    <h3 class="results-hover-title">Mishka</h3>
                     <p>Интернет магазин<br>вязаных игрушек</p>
                     <a href="#">9 900<span>P</span></a>
                     </div>
@@ -148,9 +152,9 @@
                    <div><!-- контейнер для трех точек -->
 
                    </div>
-                   <a href="#"><img src="img/img-aplus.jpg" width="358" height="578" alt="aplus-mini"></a>
-                    <div><!-- контейнер для hover -->  
-                    <h3>A Plus</h3>
+                   <a href="#"><img src="img/img-aplus.jpg" width="358" height="578" alt="Миниатура сайта A-plus"></a>
+                    <div class="results-hover"><!-- контейнер для hover -->
+                    <h3 class="results-hover-title">A Plus</h3>
                     <p>Лендинг курсов повышения<br>квалификации</p>
                     <a href="#">9 900<span>P</span></a>
                     </div>
@@ -159,53 +163,53 @@
                    <div><!-- контейнер для трех точек -->
 
                    </div>
-                   <a href="#"><img src="img/img-kvast.jpg" width="358" height="578" alt="kvast-mini"></a>
-                    <div><!-- контейнер для hover -->  
-                    <h3>Кваст</h3>
-                    <p>Промо-сайт производителя <br>крафтового кваса</p>
+                   <a href="#"><img src="img/img-kvast.jpg" width="358" height="578" alt="Миниатура сайта Кваст"></a>
+                    <div class="results-hover"><!-- контейнер для hover -->
+                    <h3 class="results-hover-title">Кваст</h3>
+                    <p>Промо-сайт производителя<br>крафтового кваса</p>
                     <a href="#">9 900<span>P</span></a>
-                    </div>                   
+                    </div>
                </li>
             </ul>
-            <ul>
-              <li><a>1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">Следующая</a></li>
+            <ul class="pagination-list">
+              <li class="pagination-item"><a>1</a></li>
+              <li class="pagination-item"><a href="#">2</a></li>
+              <li class="pagination-item"><a href="#">3</a></li>
+              <li class="pagination-item"><a href="#">Следующая</a></li>
             </ul>
        </section>
     </main>
-    <footer>
-        <section>
-            <h3>Nerds Design Studio</h3>
-            <address>
-                <p>
-                    191186, Санкт-Петербург,<br>
-                    ул. Б. Конюшенная, д. 19/8<br>
-                </p>
-                <p>
-                    тел. <a href="tel:+78122757575">+7 (812) 275-75-75</a>
-                </p>
-            </address>
-            <a href="#">Напишите нам</a>
-            <img src="img/map1.png" width="1440" height="416" alt="Карта">           
-        </section>
+    <footer class="main-footer">
+      <section class="main-footer-address">
+          <h3>Nerds Design Studio</h3>
+          <address class="main-footer-content">
+              <p>
+                  191186, Санкт-Петербург,<br>
+                  ул. Б. Конюшенная, д. 19/8<br>
+              </p>
+              <p>
+                  тел. <a class="contacts-phone" href="tel:+78122757575">+7 (812) 275-75-75</a>
+              </p>
+          </address>
+          <a class="main-footer-button" href="#">Напишите нам</a>
+          <img src="img/map1.png" width="1440" height="416" alt="расположение студии Нердс на карте">
+      </section>
 
-        <section>
-            <h2>давайте дружить, это выгодно!</h2>
-            <p>Скидка 10% для друзей из социальных сетей.</p>
-            <ul>
-                <li>
-                    <a href="#">Вконтакте</a>
-                </li>
-                <li>
-                    <a href="">Фейсбук</a>
-                </li>
-                <li>
-                    <a href="#">Инстаграм</a>
-                </li>
-            </ul>
-        </section>
-    </footer>
+      <section class="main-footer-social">
+          <h2>Давайте дружить, это выгодно!</h2>
+          <p>Скидка 10% для друзей из социальных сетей.</p>
+          <ul class="social-list">
+              <li>
+                  <a class="social-button" href="#">Вконтакте</a>
+              </li>
+              <li>
+                  <a  class="social-button" href="">Фейсбук</a>
+              </li>
+              <li>
+                  <a class="social-button" href="#">Инстаграм</a>
+              </li>
+          </ul>
+      </section>
+  </footer>
 </body>
 </html>
