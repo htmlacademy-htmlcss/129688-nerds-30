@@ -25,6 +25,7 @@
 :root {
   --basic-light-grey: #eeeeee;
   --basic-black: #000000;
+  --light-black:#4d4d4d;
   --basic-dark: #283136;
   --basic-white: #ffffff;
   --basic-grey: #666666;
@@ -33,6 +34,7 @@
   --light-red:#fb565a;
   --green:#00ca74;
   --yellow:#efc849;
+
 }
 
 body {
@@ -114,6 +116,7 @@ color: var(--basic-black);
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
+  color: var(--basic-black);
 }
 .services-list-appeal {
   font-weight: normal;
@@ -201,10 +204,12 @@ color: var(--basic-black);
   color: var(--basic-black);
 
 }
-.main-footer-content {
+.main-footer-content, .contacts-phone {
   font-weight: normal;
+  font-style: normal;
   font-size: 16px;
   line-height: 18px;
+  color: var(--basic-grey);
 }
 .main-footer-button {
   font-weight: 500;
@@ -226,7 +231,126 @@ color: var(--basic-black);
    font-weight: normal;
    font-size: 16px;
   line-height: 22px;
+  color: var(--dark-grey);
 }
 .social-list {
   list-style: none;
 }
+
+
+/*Начало страницы catalog.html*/
+.catalog-title {
+  font-weight: 500;
+  font-size: 55px;
+  line-height: 55px;
+  color: var(--basic-black);
+}
+.filters-form {
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--basic-dark);
+}
+.legend-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+.filters-form ul {
+  list-style: none;
+}
+
+/*
+.range {
+
+}
+*/
+.range-label {
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--basic-dark);
+}
+.grid-view {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+/* Стилизацию радио-кнопок пока оставил,
+не знаю как, почитаю.
+.grid-view-radio{
+  color: var(--light-black);
+  opacity: 0.4;
+}
+.grid-view-radio:hover{
+  color: var(--light-black);
+}
+*/
+.features-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+/*
+Тоже самое насчет блока чекбоксов
+Не знаю как задавать им разное состояние,
+наверное это мелкие детали?
+*/
+.features-button {
+background-color: var(--basic-light-grey);
+border-radius: 3px;
+text-transform: uppercase;
+color: var(--basic-black);
+padding: 17px 89px 15px 88px;
+/*попробовал сделать отступы у этой кнопки*/
+}
+.sort-section-list {
+  font-size: 14px;
+  line-height: 18px;
+  list-style: none;
+  text-transform: uppercase;
+}
+a.sort-section-link {
+  color: var(--basic-black);
+  opacity: 0.3;
+}
+a.sort-section-link:hover {
+  color: var(--basic-black);
+  opacity: 1;
+}
+.results-list {
+  list-style: none;
+}
+.results-hover-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+.results-hover p {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--basic-grey);
+}
+.results-hover a {
+  font-size: 16px;
+  line-height: 18px;
+  background-color: var(--light-red);
+  color: var(--basic-white);
+  text-decoration: none;
+}
+.pagination-list {
+  list-style: none;
+}
+.pagination-item a{
+font-weight: 500;
+font-size: 16px;
+line-height: 18px;
+color: var(--basic-black);
+background-color: var(--basic-light-grey);
+}
+
+
