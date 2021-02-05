@@ -31,9 +31,19 @@
   --basic-grey: #666666;
   --dark-grey:#444444;
   --basket-grey:#a6a6a6;
+  --pagination-grey:#dfdfdf;
+  --pagination-grey-dark:#d5d5d5;
   --light-red:#fb565a;
-  --green:#00ca74;
-  --yellow:#efc849;
+  --red:#e74246;
+  --dark-red:#d7373b;
+  --light-green:#00ca74;
+  --green:#00bc6c;
+  --dark-green: #00aa62;
+  --light-yellow:#efc84a;
+  --yellow:#eab534;
+  --dark-yellow:#e5a722;
+
+
 
 }
 
@@ -75,20 +85,42 @@ img {
   list-style: none;
 }
 
-.site-navigation, .content-uppercase, .basket-link, .services-list-title {
+.content-uppercase, .basket-link, .services-list-title {
   text-transform: uppercase;
 }
 /* User navigation */
-.main-navigation a,
-.site-navigation a {
+.site-navigation a,
+.main-navigation a {
+  outline: none; /*убирает контур фокуса*/
+  text-decoration: none;/*убирает подчеркивание текста*/
+  color: var(--basic-black);
+  text-transform: uppercase;
+ }
+/*непосещенные ссылки*/
+ .site-navigation a:link,
+ .main-navigation a:link {
   color: var(--basic-black);
 }
-
-.main-navigation a:hover,
-.main-navigation a:focus,
-.site-navigation a:hover,
-.site-navigation a:focus {
+/*посещенные ссылки*/
+.site-navigation a:visited,
+.main-navigation a:visited {
+  color: var(--basic-black);
+}
+/*при фокусировка напр табами*/
+.site-navigation a:focus,
+.main-navigation a:focus {
   color: var(--light-red);
+}
+/*при наведении*/
+.site-navigation a:hover,
+.main-navigation a:hover {
+  color: var(--light-red);
+}
+/*при нажатии*/
+.site-navigation a:active,
+.main-navigation a:active {
+  color: var(--basic-black);
+  opacity: 0.3;
 }
 .visually-hidden {
   display: none;
@@ -102,21 +134,49 @@ font-size: 55px;
 line-height: 55px;
 color: var(--basic-black);
 }
-.learn-more-button {
-  background-color:  var(--light-red);
-  color:  var(--basic-white);
+
+.feature-item a {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
+  padding: 17px 55px 15px 55px;
+  border-radius: 3px;
+  outline: none; /*убирает контур фокуса*/
+  text-decoration: none;/*убирает подчеркивание текста*/
+  background-color:  var(--light-red);
+  color:  var(--basic-white);
+  text-transform: uppercase;
+}
+/*непосещенные ссылки*/
+.feature-item a:link {
+  background-color:  var(--light-red);
+  color:  var(--basic-white);
+}
+/*посещенные ссылки*/
+.feature-item a:visited {
+  background-color:  var(--light-red);
+  color:  var(--basic-white);
+}
+/*при фокусировка напр табами и наведении*/
+.feature-item a:focus,
+.feature-item a:hover {
+  background-color: var(--red);
+ }
+/*при нажатии*/
+.feature-item a:active {
+  background-color: var(--dark-red);
 }
 
-
 /*Sirvices*/
+.services-list {
+  list-style: none;
+}
 .services-list-title {
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
   color: var(--basic-black);
+
 }
 .services-list-appeal {
   font-weight: normal;
@@ -129,17 +189,64 @@ color: var(--basic-black);
   line-height: 18px;
   text-transform: uppercase;
   color:var(--basic-white);
+  outline: none; /*убирает контур фокуса*/
+  text-decoration: none;/*убирает подчеркивание текста*/
+  border-radius: 3px;
 }
-.button-red {
+.services-list-item a{
+  padding: 17px 40px 15px 40px
+}
+.button-red,
+.button-red a:link,
+.button-red a:visited {
   background-color: var(--light-red);
+  color:var(--basic-white);
 }
-.button-green {
-  background-color: var(--green);
+/*при фокусировка напр табами и наведении*/
+a.button-red:focus,
+a.button-red:hover {
+  background-color: var(--red);
+ }
+/*при нажатии*/
+a.button-red:active {
+  background-color: var(--dark-red);
 }
 
-.button-yellow {
-  background-color: var(--yellow);
+
+
+.button-green,
+.button-green a:link,
+.button-green a:visited  {
+  background-color: var(--light-green);
+  color:var(--basic-white);
 }
+
+/*при фокусировка напр табами и наведении*/
+a.button-green:focus,
+a.button-green:hover {
+  background-color: var(--green);
+ }
+/*при нажатии*/
+a.button-green:active {
+  background-color: var(--dark-green);
+}
+
+.button-yellow,
+.button-yellow a:link,
+.button-yellow a:visited  {
+  background-color: var(--light-yellow);
+  color:var(--basic-white);
+}
+/*при фокусировка напр табами и наведении*/
+a.button-yellow:focus,
+a.button-yellow:hover {
+  background-color: var(--yellow);
+ }
+/*при нажатии*/
+a.button-yellow:active {
+  background-color: var(--dark-yellow);
+}
+
 /*About*/
 .about-desc {
   font-weight: 500;
@@ -201,6 +308,7 @@ color: var(--basic-black);
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
+  weight: 700;
   color: var(--basic-black);
 
 }
@@ -215,11 +323,28 @@ color: var(--basic-black);
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
+  padding: 17px 44px 15px 44px;
   text-transform: uppercase;
   color:var(--basic-white);
   background-color: var(--light-red);
+  border-radius: 3px;
+  outline: none; /*убирает контур фокуса*/
+  text-decoration: none;/*убирает подчеркивание текста*/
 }
-
+a.main-footer-button:link,
+a.main-footer-button:visited {
+  background-color: var(--light-red);
+  color:var(--basic-white);
+}
+/*при фокусировка напр табами и наведении*/
+a.main-footer-button:focus,
+a.main-footer-button:hover {
+  background-color: var(--red);
+ }
+/*при нажатии*/
+a.main-footer-button:active {
+  background-color: var(--dark-red);
+}
 /*Social*/
 .main-footer-social h2 {
   font-weight: bold;
@@ -236,6 +361,11 @@ color: var(--basic-black);
 .social-list {
   list-style: none;
 }
+
+/*-------------------------------------------------------*/
+/*-------------------------------------------------------*/
+/*-------------------------------------------------------*/
+/*-------------------------------------------------------*/
 
 
 /*Начало страницы catalog.html*/
@@ -306,20 +436,34 @@ color: var(--basic-black);
 padding: 17px 89px 15px 88px;
 /*попробовал сделать отступы у этой кнопки*/
 }
+
+
+
+
 .sort-section-list {
   font-size: 14px;
   line-height: 18px;
   list-style: none;
   text-transform: uppercase;
+  color: rgba(0,0,0,.3);
 }
-a.sort-section-link {
-  color: var(--basic-black);
-  opacity: 0.3;
+a.sort-section-link:link,
+a.sort-section-link:visited {
+  color: rgba(0,0,0,.3);
 }
 a.sort-section-link:hover {
-  color: var(--basic-black);
-  opacity: 1;
+  color: rgba(0,0,0,.6);
 }
+a.sort-section-link:active {
+  color: rgba(0,0,0, 1);
+}
+/*активный пункт меню*/
+.sort-section-active {
+  color: rgba(0,0,0, 1);
+}
+
+/*Карточки*/
+
 .results-list {
   list-style: none;
 }
@@ -342,15 +486,67 @@ a.sort-section-link:hover {
   color: var(--basic-white);
   text-decoration: none;
 }
+
+
+
+/*
+стили для заголовка карточек аля Седона
+a.results-link-title {
+  background-color: var(--basic-light-grey);
+}
+*/
+
+
+
+
+
+
+
+
 .pagination-list {
   list-style: none;
 }
+
 .pagination-item a{
 font-weight: 500;
 font-size: 16px;
 line-height: 18px;
+padding: 17px 20px 15px 20px;
+border-radius: 3px;
 color: var(--basic-black);
 background-color: var(--basic-light-grey);
+margin-bottom: 10px;
+display:inline-block;
+}
+.pagination-item a:link,
+.pagination-item a:visited {
+  color: var(--basic-black);
+  background-color: var(--basic-light-grey);
+}
+.pagination-item a:hover {
+  background-color:var(--pagination-grey);
+}
+.pagination-item a:active {
+  background-color:var(--pagination-grey-dark);
+  color: rgba(0,0,0,.3);
+}
+.pagination-item-active a{
+  background: rgba(0, 0, 0, 0.0001);
+  border: 3px solid #DBDBDB;
+  border-radius: 3px;
+  padding: 17px 20px 15px 20px;
+  margin-bottom: 10px;
+  display:inline-block;
+  box-sizing: border-box;
+}
+.pagination-button a {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 17px 77px 15px 78px;
+  text-transform: uppercase;
+  color: var(--basic-black);
+  background-color: var(--basic-light-grey);
 }
 
 
