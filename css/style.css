@@ -89,39 +89,55 @@ img {
   text-transform: uppercase;
 }
 /* User navigation */
-.site-navigation a,
+a.site-navigation-item,
 .main-navigation a {
   outline: none; /*убирает контур фокуса*/
   text-decoration: none;/*убирает подчеркивание текста*/
   color: var(--basic-black);
   text-transform: uppercase;
  }
+
 /*непосещенные ссылки*/
- .site-navigation a:link,
+ a.site-navigation-item:link,
  .main-navigation a:link {
   color: var(--basic-black);
 }
 /*посещенные ссылки*/
-.site-navigation a:visited,
+a.site-navigation-item:visited,
 .main-navigation a:visited {
   color: var(--basic-black);
 }
 /*при фокусировка напр табами*/
-.site-navigation a:focus,
+a.site-navigation-item:focus,
 .main-navigation a:focus {
   color: var(--light-red);
 }
 /*при наведении*/
-.site-navigation a:hover,
+a.site-navigation-item:hover,
 .main-navigation a:hover {
   color: var(--light-red);
 }
 /*при нажатии*/
-.site-navigation a:active,
+a.site-navigation-item:active,
 .main-navigation a:active {
   color: var(--basic-black);
   opacity: 0.3;
 }
+a.site-navigation-active {
+  border-bottom: 2px solid var(--light-red);
+  padding-bottom: 13px;
+  color: var(--basic-black);
+}
+a.site-navigation-active:hover {
+  color: var(--basic-black);
+}
+/*А еще некоторые реализуют так: */
+/*.site-navigation a:not([href]) {
+}
+Не универсальный способ, очевидно же, что это нужно
+делать через классы и js.
+И тут зануда скажет: "А если отключат js?"
+*/
 .visually-hidden {
   display: none;
 }
@@ -161,10 +177,12 @@ color: var(--basic-black);
 .feature-item a:focus,
 .feature-item a:hover {
   background-color: var(--red);
+  color: rgba(255, 255, 255, 0.3);
  }
 /*при нажатии*/
 .feature-item a:active {
   background-color: var(--dark-red);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /*Sirvices*/
@@ -200,16 +218,18 @@ color: var(--basic-black);
 .button-red a:link,
 .button-red a:visited {
   background-color: var(--light-red);
-  color:var(--basic-white);
+
 }
 /*при фокусировка напр табами и наведении*/
 a.button-red:focus,
 a.button-red:hover {
   background-color: var(--red);
+  color: rgba(255, 255, 255, 0.6);
  }
 /*при нажатии*/
 a.button-red:active {
   background-color: var(--dark-red);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -225,10 +245,12 @@ a.button-red:active {
 a.button-green:focus,
 a.button-green:hover {
   background-color: var(--green);
+  color: rgba(255, 255, 255, 0.3);
  }
 /*при нажатии*/
 a.button-green:active {
   background-color: var(--dark-green);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .button-yellow,
@@ -241,10 +263,12 @@ a.button-green:active {
 a.button-yellow:focus,
 a.button-yellow:hover {
   background-color: var(--yellow);
+  color: rgba(255, 255, 255, 0.3);
  }
 /*при нажатии*/
 a.button-yellow:active {
   background-color: var(--dark-yellow);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /*About*/
@@ -467,6 +491,12 @@ a.sort-section-link:active {
 .results-list {
   list-style: none;
 }
+.results-hover {
+  width:360px;
+  height: 231px;
+  display:none;
+}
+
 .results-hover-title {
   font-weight: bold;
   font-size: 18px;
@@ -485,24 +515,28 @@ a.sort-section-link:active {
   background-color: var(--light-red);
   color: var(--basic-white);
   text-decoration: none;
+  padding: 17px 72px 15px 72px;
+  border-radius: 3px;
 }
-
-
-
-/*
-стили для заголовка карточек аля Седона
-a.results-link-title {
-  background-color: var(--basic-light-grey);
+a.results-link-title{
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--basic-black);
+  background-color: inherit;
 }
-*/
-
-
-
-
-
-
-
-
+.card-container img {
+  position: relative;
+  z-index: 1;
+}
+.card-container:hover .results-hover{
+  display:block;
+  position: relative;
+  z-index: 5;
+  top: -300px;
+  background: var(--basic-light-grey);
+  outline: 1px solid  green;
+}
 .pagination-list {
   list-style: none;
 }
@@ -548,5 +582,16 @@ display:inline-block;
   color: var(--basic-black);
   background-color: var(--basic-light-grey);
 }
-
+.pagination-button a:link,
+.pagination-button a:visited {
+  color: var(--basic-black);
+  background-color: var(--basic-light-grey);
+}
+.pagination-button a:hover {
+  background-color:var(--pagination-grey);
+}
+.pagination-button a:active {
+  background-color:var(--pagination-grey-dark);
+  color: rgba(0,0,0,.3);
+}
 
