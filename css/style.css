@@ -31,13 +31,32 @@
   --basic-grey: #666666;
   --dark-grey:#444444;
   --basket-grey:#a6a6a6;
+  --pagination-grey:#dfdfdf;
+  --pagination-grey-dark:#d5d5d5;
   --light-red:#fb565a;
-  --green:#00ca74;
-  --yellow:#efc849;
+  --red:#e74246;
+  --dark-red:#d7373b;
+  --light-green:#00ca74;
+  --green:#00bc6c;
+  --dark-green: #00aa62;
+  --light-yellow:#efc84a;
+  --yellow:#eab534;
+  --dark-yellow:#e5a722;
+
+
 
 }
 
-body {
+/* Grid */
+
+.page {
+  height: 100%;
+}
+
+
+
+
+.page-body {
   min-width: 1160px;
   margin: 0;
   padding: 0;
@@ -45,11 +64,19 @@ body {
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
-
   color: var(--basic-dark);
   background-color: var(--basic-white);
-}
 
+/*шапка занимает высоту по своему контенту, как и подвал,
+ а контентная часть занимает всё возможное пространство.
+ Так добиваемся того, чтобы подвал прилип к низу страницы.
+ */
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+
+}
 a {
   text-decoration: none;
 }
@@ -61,35 +88,67 @@ img {
 
 .main-header {
   background-color:var(--basic-light-grey);
+  outline: 1px solid rgba(0, 255, 0, 0.7);
 }
 
+.main-header-logo {
+  outline: 5px solid rgba(255, 0, 0, 0.3);
+}
+
+
+
 .main-navigation {
+
+  background-color: transparent;
+  display: grid;
+}
+.site-navigation {
+  list-style: none;
+
+}
+
+
+/* User navigation */
+.site-navigation-item {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
   color: var(--basic-black);
-  background-color: transparent;
-}
-.site-navigation {
-  list-style: none;
-}
-
-.site-navigation, .content-uppercase, .basket-link, .services-list-title {
+  outline: none; /*убирает контур фокуса*/
+  text-decoration: none;/*убирает подчеркивание текста*/
   text-transform: uppercase;
+ }
+
+/*при фокусировка и наведении*/
+.site-navigation-item:focus,
+.site-navigation-item:hover {
+  color: var(--light-red);
 }
-/* User navigation */
-.main-navigation a,
-.site-navigation a {
+/*при нажатии*/
+.site-navigation-item:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+.site-navigation-active,
+.site-navigation-active:hover,
+.site-navigation-active:focus,
+.site-navigation-active:active {
+  border-bottom: 2px solid var(--light-red);
+  padding-bottom: 13px;
   color: var(--basic-black);
 }
 
-.main-navigation a:hover,
-.main-navigation a:focus,
-.site-navigation a:hover,
-.site-navigation a:focus {
-  color: var(--light-red);
+.content-uppercase, .basket-link, .services-list-title {
+  text-transform: uppercase;
 }
+
+/*А еще некоторые реализуют так: */
+/*.site-navigation a:not([href]) {
+}
+Не универсальный способ, очевидно же, что это нужно
+делать через классы и js.
+И тут зануда скажет: "А если отключат js?"
+*/
 .visually-hidden {
   display: none;
 }
@@ -102,44 +161,97 @@ font-size: 55px;
 line-height: 55px;
 color: var(--basic-black);
 }
-.learn-more-button {
-  background-color:  var(--light-red);
-  color:  var(--basic-white);
+
+.button {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
+  border-radius: 3px;
+  outline: none; /*убирает контур фокуса*/
+  text-decoration: none;/*убирает подчеркивание текста*/
+  background-color:  var(--light-red);
+  color:  var(--basic-white);
+  text-transform: uppercase;
+}
+/*при фокусировка напр табами и наведении*/
+.button:focus,
+.button:hover {
+  background-color: var(--red);
+  }
+/*при нажатии*/
+.button:active {
+  background-color: var(--dark-red);
+  color: rgba(255, 255, 255, 0.6);
 }
 
+.learn-more-button{
+  padding: 17px 54px 15px 54px;
+}
 
 /*Sirvices*/
+.services-list {
+  list-style: none;
+}
 .services-list-title {
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
   color: var(--basic-black);
+
 }
 .services-list-appeal {
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
 }
-.services-button {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
-  text-transform: uppercase;
+
+.button-red,
+.button-green,
+.button-yellow  {
+  padding: 17px 40px 15px 40px
+}
+
+/*при фокусировка напр табами и наведении*/
+.button-red:focus,
+.button-red:hover {
+  background-color: var(--red);
+ }
+/*при нажатии*/
+.button-red:active {
+  background-color: var(--dark-red);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.button-green {
+  background-color: var(--light-green);
   color:var(--basic-white);
 }
-.button-red {
-  background-color: var(--light-red);
-}
-.button-green {
+/*при фокусировка напр табами и наведении*/
+.button-green:focus,
+.button-green:hover {
   background-color: var(--green);
+ }
+/*при нажатии*/
+a.button-green:active {
+  background-color: var(--dark-green);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .button-yellow {
-  background-color: var(--yellow);
+  background-color: var(--light-yellow);
+  color:var(--basic-white);
 }
+/*при фокусировка напр табами и наведении*/
+.button-yellow:focus,
+.button-yellow:hover {
+  background-color: var(--yellow);
+ }
+/*при нажатии*/
+.button-yellow:active {
+  background-color: var(--dark-yellow);
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /*About*/
 .about-desc {
   font-weight: 500;
@@ -197,10 +309,14 @@ color: var(--basic-black);
 }
 /*footer*/
 
+.main-footer {
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+}
 .main-footer-address h3 {
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
+  weight: 700;
   color: var(--basic-black);
 
 }
@@ -212,14 +328,18 @@ color: var(--basic-black);
   color: var(--basic-grey);
 }
 .main-footer-button {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
-  text-transform: uppercase;
-  color:var(--basic-white);
-  background-color: var(--light-red);
+  padding: 17px 44px 15px 44px;
 }
 
+/*при фокусировка напр табами и наведении*/
+.main-footer-button:focus,
+.main-footer-button:hover {
+  background-color: var(--red);
+ }
+/*при нажатии*/
+.main-footer-button:active {
+  background-color: var(--dark-red);
+}
 /*Social*/
 .main-footer-social h2 {
   font-weight: bold;
@@ -236,6 +356,11 @@ color: var(--basic-black);
 .social-list {
   list-style: none;
 }
+
+/*-------------------------------------------------------*/
+/*-------------------------------------------------------*/
+/*-------------------------------------------------------*/
+/*-------------------------------------------------------*/
 
 
 /*Начало страницы catalog.html*/
@@ -292,6 +417,7 @@ color: var(--basic-black);
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
+  color:var(--basic-black)
 }
 /*
 Тоже самое насчет блока чекбоксов
@@ -306,51 +432,144 @@ color: var(--basic-black);
 padding: 17px 89px 15px 88px;
 /*попробовал сделать отступы у этой кнопки*/
 }
+
 .sort-section-list {
+  list-style: none;
+}
+.sort-section-link {
   font-size: 14px;
   line-height: 18px;
-  list-style: none;
   text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.3);
 }
-a.sort-section-link {
-  color: var(--basic-black);
-  opacity: 0.3;
+.sort-section-link:hover {
+  color: rgba(0, 0, 0, 0.6);
 }
-a.sort-section-link:hover {
-  color: var(--basic-black);
-  opacity: 1;
+.sort-section-link:active,
+.sort-section-active {
+  color: rgba(0, 0, 0, 1);
 }
+
+
+/*Карточки*/
+
 .results-list {
   list-style: none;
 }
-.results-hover-title {
+.results-hover {
+  width:360px;
+  height: 231px;
+  /*display:none;*/
+}
+/*название карточки*/
+.results-link-title {
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
   color: var(--basic-black);
+  margin-bottom: 12px;
 }
-.results-hover p {
+.results-link-title:focus,
+.results-link-title:hover {
+  color: var(--light-red);
+}
+.results-link-title:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.results-hover-content {
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-grey);
+  margin-bottom: 32px;
 }
-.results-hover a {
-  font-size: 16px;
-  line-height: 18px;
-  background-color: var(--light-red);
-  color: var(--basic-white);
-  text-decoration: none;
+/*будет кнопкой*/
+.price-button {
+  padding: 17px 72px 15px 72px;
 }
+.price-button:focus,
+.price-button:hover {
+  background-color: var(--red);
+}
+.price-button:active {
+  background-color: var(--dark-red);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+
+}
+
+
+.card-container img {
+  position: relative;
+  z-index: 1;
+}
+.card-container:hover .results-hover{
+  /*
+  display:block;
+  position: relative;
+  z-index: 5;
+  top: -300px;
+  */
+  background: var(--basic-light-grey);
+  outline: 1px solid  green;
+}
+
+
 .pagination-list {
   list-style: none;
 }
-.pagination-item a{
+
+.pagination-item{
 font-weight: 500;
 font-size: 16px;
 line-height: 18px;
+padding: 17px 20px 15px 20px;
+border-radius: 3px;
 color: var(--basic-black);
 background-color: var(--basic-light-grey);
+margin-bottom: 10px;
+display:inline-block;
+}
+.pagination-item:focus,
+.pagination-item:hover {
+  background-color:var(--pagination-grey);
+}
+.pagination-item:active {
+  background-color:var(--pagination-grey-dark);
+  color: rgba(0, 0, 0, 0.3);
+}
+.pagination-item-active,
+.pagination-item-active:focus,
+.pagination-item-active:hover,
+.pagination-item-active:active {
+  background-color: rgba(0, 0, 0, 0.0001);
+  color: var(--basic-black);
+  border: 3px solid #DBDBDB;
+  border-radius: 3px;
+  padding: 17px 20px 15px 20px;
+  /*
+  margin-bottom: 10px;
+  display:inline-block;
+  box-sizing: border-box;
+  */
 }
 
+
+.pagination-item-button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 17px 77px 15px 78px;
+  text-transform: uppercase;
+  color: var(--basic-black);
+  background-color: var(--basic-light-grey);
+}
+.pagination-button:focus,
+.pagination-button:hover {
+  background-color:var(--pagination-grey);
+}
+.pagination-button:active {
+  background-color:var(--pagination-grey-dark);
+  color: rgba(0, 0, 0, 0.3);
+}
 
