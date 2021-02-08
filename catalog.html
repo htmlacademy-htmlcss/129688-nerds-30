@@ -19,10 +19,10 @@
          <ul class="site-navigation">
              <li><a class="site-navigation-item" href="index.html">Студия</a></li>
              <li><a class="site-navigation-item" href="#">Клиенты</a></li>
-             <li><a class="site-navigation-active"site-navigation>Магазин</a></li>
+             <li><a class="site-navigation-item site-navigation-active"site-navigation>Магазин</a></li>
              <li><a class="site-navigation-item" href="#">Контакты</a></li>
         </ul>
-        <a class="basket-link" href="#">Корзина</a>
+        <a class="site-navigation-item basket-link" href="#">Корзина</a>
       </nav>
       <h1 class="catalog-title">Магазин готовых шаблонов</h1>
     </header>
@@ -77,7 +77,7 @@
                         </li>
                         <li>
                             <input type="checkbox" name="features-galery" id="filter-galery">
-                            <label for="filter-galery">Блок преимуществ</label>
+                            <label for="filter-galery">Галерея</label>
                         </li>
                         <li>
                             <input type="checkbox" name="features-basket" id="filter-basket">
@@ -93,7 +93,7 @@
         <fieldset>
             <legend class="legend-title">Сортировать:</legend>
             <ul class="sort-section-list">
-                <li><a class="sort-section-active" href="">По цене</a></li>
+                <li><a class="sort-section-link sort-section-active" href="">По цене</a></li>
                 <li><a class="sort-section-link" href="">По типу</a></li>
                 <li><a class="sort-section-link" href="">По названию</a></li>
                 <li><span></span></li><!-- по-убыванию -->
@@ -110,9 +110,9 @@
                    <img src="img/img-sedona.jpg" width="358" height="578" alt="Миниатура сайта SEDONA">
 
                    <div class="results-hover"><!-- контейнер для hover -->
-                    <h3 class="results-hover-title"><a href="#" class="results-link-title">SEDONA</a></h3>
-                    <p>Информационный сайт<br>для туристов</p>
-                    <a href="#">9 900 <span>P</span></a>
+                    <h3><a href="#" class="results-link-title">SEDONA</a></h3>
+                    <p class="results-hover-content">Информационный сайт<br>для туристов</p>
+                    <a class="button price-button" href="#">9 900 <span>P</span></a>
                    </div>
 
                </li>
@@ -122,9 +122,9 @@
                    <img src="img/img-pink.jpg" width="358" height="578" alt="Миниатюра сайта Pink">
 
                    <div class="results-hover"><!-- контейнер для hover -->
-                    <h3 class="results-hover-title"><a href="#" class="results-link-title">Pink App</a></h3>
-                    <p>Продвинутый лендинг<br>приложения для iOS и Android</p>
-                    <a href="#">9 900 <span>P</span></a>
+                    <h3><a href="#" class="results-link-title">Pink App</a></h3>
+                    <p class="results-hover-content">Продвинутый лендинг<br>приложения для iOS и Android</p>
+                    <a class="button price-button" href="#">9 900 <span>P</span></a>
                    </div>
                </li>
                <li class="card-container">
@@ -132,9 +132,9 @@
                    </div>
                    <img src="img/img-barbershop.jpg" width="358" height="578" alt="Миниатура сайта Барбершоп">
                     <div class="results-hover"><!-- контейнер для hover -->
-                    <h3 class="results-hover-title"><a href="#" class="results-link-title">Barbershop</a></h3>
-                    <p>Сайт салона красоты.<br>Для мужчин, да.</p>
-                    <a href="#">9 900 <span>P</span></a>
+                    <h3><a href="#" class="results-link-title">Barbershop</a></h3>
+                    <p class="results-hover-content">Сайт салона красоты.<br>Для мужчин, да.</p>
+                    <a class="button price-button" href="#">9 900 <span>P</span></a>
                     </div>
                </li>
                <li class="card-container">
@@ -142,9 +142,9 @@
                    </div>
                    <img src="img/img-mishka.jpg" width="358" height="578" alt="Миниатура сайта Mishka">
                     <div class="results-hover"><!-- контейнер для hover -->
-                    <h3 class="results-hover-title"><a href="#" class="results-link-title">Mishka</a></h3>
-                    <p>Интернет магазин<br>вязаных игрушек</p>
-                    <a href="#">9 900 <span>P</span></a>
+                    <h3 ><a href="#" class="results-link-title">Mishka</a></h3>
+                    <p class="results-hover-content">Интернет магазин<br>вязаных игрушек</p>
+                    <a class="button price-button" href="#">9 900 <span>P</span></a>
                     </div>
                </li>
                <li class="card-container">
@@ -152,9 +152,9 @@
                    </div>
                    <img src="img/img-aplus.jpg" width="358" height="578" alt="Миниатура сайта A-plus">
                     <div class="results-hover"><!-- контейнер для hover -->
-                    <h3 class="results-hover-title"><a href="#" class="results-link-title">A Plus</a></h3>
-                    <p>Лендинг курсов повышения<br>квалификации</p>
-                    <a href="#">9 900 <span>P</span></a>
+                    <h3><a href="#" class="results-link-title">A Plus</a></h3>
+                    <p class="results-hover-content">Лендинг курсов повышения<br>квалификации</p>
+                    <a class="button price-button" href="#">9 900 <span>P</span></a>
                     </div>
                </li>
                <li class="card-container">
@@ -162,17 +162,17 @@
                    </div>
                    <img src="img/img-kvast.jpg" width="358" height="578" alt="Миниатура сайта Кваст">
                     <div class="results-hover"><!-- контейнер для hover -->
-                    <h3 class="results-hover-title">Кваст</h3>
-                    <p>Промо-сайт производителя<br>крафтового кваса</p>
-                    <a href="#">9 900 <span>P</span></a>
+                    <h3>Кваст</h3>
+                    <p class="results-hover-content">Промо-сайт производителя<br>крафтового кваса</p>
+                    <a class="button price-button" href="#">9 900 <span>P</span></a>
                     </div>
                </li>
             </ul>
             <ul class="pagination-list">
-              <li class="pagination-item-active"><a>1</a></li>
-              <li class="pagination-item"><a href="#">2</a></li>
-              <li class="pagination-item"><a href="#">3</a></li>
-              <li class="pagination-button"><a href="#">Следующая</a></li>
+              <li><a class="pagination-item pagination-item-active">1</a></li>
+              <li><a class="pagination-item" href="#">2</a></li>
+              <li><a class="pagination-item" href="#">3</a></li>
+              <li><a class="pagination-item pagination-item-button" href="#">Следующая</a></li>
             </ul>
        </section>
     </main>
@@ -188,7 +188,7 @@
                   тел. <a class="contacts-phone" href="tel:+78122757575">+7 (812) 275-75-75</a>
               </p>
           </address>
-          <a class="main-footer-button" href="#">Напишите нам</a>
+          <a class="button main-footer-button" href="#">Напишите нам</a>
           <img src="img/map1.png" width="1440" height="416" alt="расположение студии Нердс на карте">
       </section>
 

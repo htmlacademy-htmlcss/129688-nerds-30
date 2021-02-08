@@ -47,7 +47,16 @@
 
 }
 
-body {
+/* Grid */
+
+.page {
+  height: 100%;
+}
+
+
+
+
+.page-body {
   min-width: 1160px;
   margin: 0;
   padding: 0;
@@ -55,11 +64,19 @@ body {
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
-
   color: var(--basic-dark);
   background-color: var(--basic-white);
-}
 
+/*шапка занимает высоту по своему контенту, как и подвал,
+ а контентная часть занимает всё возможное пространство.
+ Так добиваемся того, чтобы подвал прилип к низу страницы.
+ */
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+
+}
 a {
   text-decoration: none;
 }
@@ -71,66 +88,60 @@ img {
 
 .main-header {
   background-color:var(--basic-light-grey);
+  outline: 1px solid rgba(0, 255, 0, 0.7);
 }
 
+.main-header-logo {
+  outline: 5px solid rgba(255, 0, 0, 0.3);
+}
+
+
+
 .main-navigation {
+
+  background-color: transparent;
+  display: grid;
+}
+.site-navigation {
+  list-style: none;
+
+}
+
+
+/* User navigation */
+.site-navigation-item {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
   color: var(--basic-black);
-  background-color: transparent;
+  outline: none; /*убирает контур фокуса*/
+  text-decoration: none;/*убирает подчеркивание текста*/
+  text-transform: uppercase;
+ }
+
+/*при фокусировка и наведении*/
+.site-navigation-item:focus,
+.site-navigation-item:hover {
+  color: var(--light-red);
 }
-.site-navigation {
-  list-style: none;
+/*при нажатии*/
+.site-navigation-item:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+.site-navigation-active,
+.site-navigation-active:hover,
+.site-navigation-active:focus,
+.site-navigation-active:active {
+  border-bottom: 2px solid var(--light-red);
+  padding-bottom: 13px;
+  color: var(--basic-black);
 }
 
 .content-uppercase, .basket-link, .services-list-title {
   text-transform: uppercase;
 }
-/* User navigation */
-a.site-navigation-item,
-.main-navigation a {
-  outline: none; /*убирает контур фокуса*/
-  text-decoration: none;/*убирает подчеркивание текста*/
-  color: var(--basic-black);
-  text-transform: uppercase;
- }
 
-/*непосещенные ссылки*/
- a.site-navigation-item:link,
- .main-navigation a:link {
-  color: var(--basic-black);
-}
-/*посещенные ссылки*/
-a.site-navigation-item:visited,
-.main-navigation a:visited {
-  color: var(--basic-black);
-}
-/*при фокусировка напр табами*/
-a.site-navigation-item:focus,
-.main-navigation a:focus {
-  color: var(--light-red);
-}
-/*при наведении*/
-a.site-navigation-item:hover,
-.main-navigation a:hover {
-  color: var(--light-red);
-}
-/*при нажатии*/
-a.site-navigation-item:active,
-.main-navigation a:active {
-  color: var(--basic-black);
-  opacity: 0.3;
-}
-a.site-navigation-active {
-  border-bottom: 2px solid var(--light-red);
-  padding-bottom: 13px;
-  color: var(--basic-black);
-}
-a.site-navigation-active:hover {
-  color: var(--basic-black);
-}
 /*А еще некоторые реализуют так: */
 /*.site-navigation a:not([href]) {
 }
@@ -151,11 +162,10 @@ line-height: 55px;
 color: var(--basic-black);
 }
 
-.feature-item a {
+.button {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  padding: 17px 55px 15px 55px;
   border-radius: 3px;
   outline: none; /*убирает контур фокуса*/
   text-decoration: none;/*убирает подчеркивание текста*/
@@ -163,26 +173,19 @@ color: var(--basic-black);
   color:  var(--basic-white);
   text-transform: uppercase;
 }
-/*непосещенные ссылки*/
-.feature-item a:link {
-  background-color:  var(--light-red);
-  color:  var(--basic-white);
-}
-/*посещенные ссылки*/
-.feature-item a:visited {
-  background-color:  var(--light-red);
-  color:  var(--basic-white);
-}
 /*при фокусировка напр табами и наведении*/
-.feature-item a:focus,
-.feature-item a:hover {
+.button:focus,
+.button:hover {
   background-color: var(--red);
-  color: rgba(255, 255, 255, 0.3);
- }
+  }
 /*при нажатии*/
-.feature-item a:active {
+.button:active {
   background-color: var(--dark-red);
   color: rgba(255, 255, 255, 0.6);
+}
+
+.learn-more-button{
+  padding: 17px 54px 15px 54px;
 }
 
 /*Sirvices*/
@@ -201,51 +204,32 @@ color: var(--basic-black);
   font-size: 16px;
   line-height: 24px;
 }
-.services-button {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
-  text-transform: uppercase;
-  color:var(--basic-white);
-  outline: none; /*убирает контур фокуса*/
-  text-decoration: none;/*убирает подчеркивание текста*/
-  border-radius: 3px;
-}
-.services-list-item a{
+
+.button-red,
+.button-green,
+.button-yellow  {
   padding: 17px 40px 15px 40px
 }
-.button-red,
-.button-red a:link,
-.button-red a:visited {
-  background-color: var(--light-red);
 
-}
 /*при фокусировка напр табами и наведении*/
-a.button-red:focus,
-a.button-red:hover {
+.button-red:focus,
+.button-red:hover {
   background-color: var(--red);
-  color: rgba(255, 255, 255, 0.6);
  }
 /*при нажатии*/
-a.button-red:active {
+.button-red:active {
   background-color: var(--dark-red);
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
 }
 
-
-
-.button-green,
-.button-green a:link,
-.button-green a:visited  {
+.button-green {
   background-color: var(--light-green);
   color:var(--basic-white);
 }
-
 /*при фокусировка напр табами и наведении*/
-a.button-green:focus,
-a.button-green:hover {
+.button-green:focus,
+.button-green:hover {
   background-color: var(--green);
-  color: rgba(255, 255, 255, 0.3);
  }
 /*при нажатии*/
 a.button-green:active {
@@ -253,20 +237,17 @@ a.button-green:active {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.button-yellow,
-.button-yellow a:link,
-.button-yellow a:visited  {
+.button-yellow {
   background-color: var(--light-yellow);
   color:var(--basic-white);
 }
 /*при фокусировка напр табами и наведении*/
-a.button-yellow:focus,
-a.button-yellow:hover {
+.button-yellow:focus,
+.button-yellow:hover {
   background-color: var(--yellow);
-  color: rgba(255, 255, 255, 0.3);
  }
 /*при нажатии*/
-a.button-yellow:active {
+.button-yellow:active {
   background-color: var(--dark-yellow);
   color: rgba(255, 255, 255, 0.6);
 }
@@ -328,6 +309,9 @@ a.button-yellow:active {
 }
 /*footer*/
 
+.main-footer {
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+}
 .main-footer-address h3 {
   font-weight: bold;
   font-size: 18px;
@@ -344,29 +328,16 @@ a.button-yellow:active {
   color: var(--basic-grey);
 }
 .main-footer-button {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
   padding: 17px 44px 15px 44px;
-  text-transform: uppercase;
-  color:var(--basic-white);
-  background-color: var(--light-red);
-  border-radius: 3px;
-  outline: none; /*убирает контур фокуса*/
-  text-decoration: none;/*убирает подчеркивание текста*/
 }
-a.main-footer-button:link,
-a.main-footer-button:visited {
-  background-color: var(--light-red);
-  color:var(--basic-white);
-}
+
 /*при фокусировка напр табами и наведении*/
-a.main-footer-button:focus,
-a.main-footer-button:hover {
+.main-footer-button:focus,
+.main-footer-button:hover {
   background-color: var(--red);
  }
 /*при нажатии*/
-a.main-footer-button:active {
+.main-footer-button:active {
   background-color: var(--dark-red);
 }
 /*Social*/
@@ -446,6 +417,7 @@ a.main-footer-button:active {
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
+  color:var(--basic-black)
 }
 /*
 Тоже самое насчет блока чекбоксов
@@ -461,30 +433,23 @@ padding: 17px 89px 15px 88px;
 /*попробовал сделать отступы у этой кнопки*/
 }
 
-
-
-
 .sort-section-list {
+  list-style: none;
+}
+.sort-section-link {
   font-size: 14px;
   line-height: 18px;
-  list-style: none;
   text-transform: uppercase;
-  color: rgba(0,0,0,.3);
+  color: rgba(0, 0, 0, 0.3);
 }
-a.sort-section-link:link,
-a.sort-section-link:visited {
-  color: rgba(0,0,0,.3);
+.sort-section-link:hover {
+  color: rgba(0, 0, 0, 0.6);
 }
-a.sort-section-link:hover {
-  color: rgba(0,0,0,.6);
-}
-a.sort-section-link:active {
-  color: rgba(0,0,0, 1);
-}
-/*активный пункт меню*/
+.sort-section-link:active,
 .sort-section-active {
-  color: rgba(0,0,0, 1);
+  color: rgba(0, 0, 0, 1);
 }
+
 
 /*Карточки*/
 
@@ -494,54 +459,67 @@ a.sort-section-link:active {
 .results-hover {
   width:360px;
   height: 231px;
-  display:none;
+  /*display:none;*/
 }
-
-.results-hover-title {
+/*название карточки*/
+.results-link-title {
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
   text-transform: uppercase;
   color: var(--basic-black);
+  margin-bottom: 12px;
 }
-.results-hover p {
+.results-link-title:focus,
+.results-link-title:hover {
+  color: var(--light-red);
+}
+.results-link-title:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.results-hover-content {
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-grey);
+  margin-bottom: 32px;
 }
-.results-hover a {
-  font-size: 16px;
-  line-height: 18px;
-  background-color: var(--light-red);
-  color: var(--basic-white);
-  text-decoration: none;
+/*будет кнопкой*/
+.price-button {
   padding: 17px 72px 15px 72px;
-  border-radius: 3px;
 }
-a.results-link-title{
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 30px;
-  color: var(--basic-black);
-  background-color: inherit;
+.price-button:focus,
+.price-button:hover {
+  background-color: var(--red);
 }
+.price-button:active {
+  background-color: var(--dark-red);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+
+}
+
+
 .card-container img {
   position: relative;
   z-index: 1;
 }
 .card-container:hover .results-hover{
+  /*
   display:block;
   position: relative;
   z-index: 5;
   top: -300px;
+  */
   background: var(--basic-light-grey);
   outline: 1px solid  green;
 }
+
+
 .pagination-list {
   list-style: none;
 }
 
-.pagination-item a{
+.pagination-item{
 font-weight: 500;
 font-size: 16px;
 line-height: 18px;
@@ -552,28 +530,32 @@ background-color: var(--basic-light-grey);
 margin-bottom: 10px;
 display:inline-block;
 }
-.pagination-item a:link,
-.pagination-item a:visited {
-  color: var(--basic-black);
-  background-color: var(--basic-light-grey);
-}
-.pagination-item a:hover {
+.pagination-item:focus,
+.pagination-item:hover {
   background-color:var(--pagination-grey);
 }
-.pagination-item a:active {
+.pagination-item:active {
   background-color:var(--pagination-grey-dark);
-  color: rgba(0,0,0,.3);
+  color: rgba(0, 0, 0, 0.3);
 }
-.pagination-item-active a{
-  background: rgba(0, 0, 0, 0.0001);
+.pagination-item-active,
+.pagination-item-active:focus,
+.pagination-item-active:hover,
+.pagination-item-active:active {
+  background-color: rgba(0, 0, 0, 0.0001);
+  color: var(--basic-black);
   border: 3px solid #DBDBDB;
   border-radius: 3px;
   padding: 17px 20px 15px 20px;
+  /*
   margin-bottom: 10px;
   display:inline-block;
   box-sizing: border-box;
+  */
 }
-.pagination-button a {
+
+
+.pagination-item-button {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
@@ -582,16 +564,12 @@ display:inline-block;
   color: var(--basic-black);
   background-color: var(--basic-light-grey);
 }
-.pagination-button a:link,
-.pagination-button a:visited {
-  color: var(--basic-black);
-  background-color: var(--basic-light-grey);
-}
-.pagination-button a:hover {
+.pagination-button:focus,
+.pagination-button:hover {
   background-color:var(--pagination-grey);
 }
-.pagination-button a:active {
+.pagination-button:active {
   background-color:var(--pagination-grey-dark);
-  color: rgba(0,0,0,.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
