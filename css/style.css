@@ -42,21 +42,23 @@
   --light-yellow:#efc84a;
   --yellow:#eab534;
   --dark-yellow:#e5a722;
-
-
-
 }
 
 /* Grid */
 
 .page {
   height: 100%;
+  /*для прибития футера*/
 }
 
-
-
-
 .page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+
+
+
   min-width: 1160px;
   margin: 0;
   padding: 0;
@@ -70,13 +72,18 @@
 /*шапка занимает высоту по своему контенту, как и подвал,
  а контентная часть занимает всё возможное пространство.
  Так добиваемся того, чтобы подвал прилип к низу страницы.
- */
+
   min-height: 100%;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
-
+*/
 }
+.positioner {
+  width: 1160px;
+  margin: 0 auto;
+}
+
 a {
   text-decoration: none;
 }
@@ -88,24 +95,37 @@ img {
 
 .main-header {
   background-color:var(--basic-light-grey);
-  outline: 1px solid rgba(0, 255, 0, 0.7);
+  outline: 3px solid rgba(0, 255, 0, 0.7);
+  outline-offset: -5px;
 }
-
-.main-header-logo {
-  outline: 5px solid rgba(255, 0, 0, 0.3);
-}
-
 
 
 .main-navigation {
 
   background-color: transparent;
+  /* display:grid;
+  grid-template-columns: repeat(12, 60px);
+  column-gap: 20px;
+  align-items: center; */
   display: grid;
-}
-.site-navigation {
-  list-style: none;
+  grid-template-columns: 140px 1fr min-content;
+
 
 }
+
+.main-header-logo {
+  outline: 5px solid rgba(255, 0, 0, 0.3);
+  outline-offset: -5px;
+  /* grid-column: 1/4; */
+}
+
+.site-navigation {
+  list-style: none;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
+
+
 
 
 /* User navigation */
@@ -137,6 +157,13 @@ img {
   padding-bottom: 13px;
   color: var(--basic-black);
 }
+
+.basket-link {
+  /* grid-column: 21/24; */
+  outline: 5px solid rgba(255, 0, 255, 0.3);
+  outline-offset: -5px;
+}
+
 
 .content-uppercase, .basket-link, .services-list-title {
   text-transform: uppercase;
@@ -181,7 +208,7 @@ color: var(--basic-black);
 /*при нажатии*/
 .button:active {
   background-color: var(--dark-red);
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .learn-more-button{
@@ -189,8 +216,21 @@ color: var(--basic-black);
 }
 
 /*Sirvices*/
+.services{
+  outline: 5px solid rgba(255, 0, 0 , 0.3);
+
+}
 .services-list {
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 80px;
+}
+.services-list-item {
+  outline: 5px solid rgba(0, 255, 255 , 0.3);
+  outline-offset: -5px;
 }
 .services-list-title {
   font-weight: bold;
@@ -253,6 +293,20 @@ a.button-green:active {
 }
 
 /*About*/
+.about {
+  display: grid;
+  grid-template-columns: repeat (12, 60px);
+  grid-gap: 20px;
+  outline: 5px solid rgba(180, 32, 131, 0.3);
+  outline-offset: -5px;
+}
+.about-left{
+  grid-column: 1/16;
+}
+.about-right{
+  grid-column: 17/24;
+}
+
 .about-desc {
   font-weight: 500;
   font-size: 45px;
@@ -289,28 +343,45 @@ a.button-green:active {
   text-transform: uppercase;
   color: var(--basic-black);
 }
-.percent-list-item {
+.percent-list {
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0;
+  margin: 0;
 }
+.percent-list-item {
+
+}
+
 .percent-list-level {
   font-weight: bold;
   font-size: 45px;
   line-height: 64px;
   color: var(--basic-black);
+  margin-bottom: 11px;
 }
 .level-desc {
   font-weight: normal;
   font-size: 16px;
   line-height: 18px;
+
 }
 /*Partners*/
 .partners-list {
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 /*footer*/
 
 .main-footer {
   outline: 5px solid rgba(255, 0, 0, 0.7);
+}
+.main-footer-address {
+  width: 319px;
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+  outline-offset: -5px;
 }
 .main-footer-address h3 {
   font-weight: bold;
@@ -340,7 +411,30 @@ a.button-green:active {
 .main-footer-button:active {
   background-color: var(--dark-red);
 }
+
+.imgStretch {
+  min-width: 100%;
+}
+
+
+
+
 /*Social*/
+.main-footer-social {
+  display: grid;
+  grid-template-columns: repeat(12, 60px);
+  column-gap: 40px;
+
+}
+.footer-left{
+  grid-column: 1/6;
+}
+.footer-right{
+  grid-column: 7/24;
+  justify-self: start;
+}
+
+
 .main-footer-social h2 {
   font-weight: bold;
   font-size: 36px;
@@ -353,9 +447,17 @@ a.button-green:active {
   line-height: 22px;
   color: var(--dark-grey);
 }
+
+
+
+
+
+
 .social-list {
   list-style: none;
 }
+
+
 
 /*-------------------------------------------------------*/
 /*-------------------------------------------------------*/

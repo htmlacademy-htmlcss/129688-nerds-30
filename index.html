@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page-body">
+
     <header class="main-header">
-      <nav class="main-navigation">
+
+
+      <nav class="main-navigation positioner">
         <a class="main-header-logo">
             <img src="img/nerds-logo.svg" height="65" width="160" alt="Логотип Нёрдс">
         </a>
@@ -24,8 +27,11 @@
         </ul>
         <a class="site-navigation-item basket-link" href="#">Корзина</a>
       </nav>
+
     </header>
-    <main class="container">
+
+
+    <main class="container positioner">
         <h1 class="visually-hidden">дизай студия Нёрдс</h1>
         <section class="main-slider"><!-- слайдер -->
             <h2 class="visually-hidden">Преимущества</h2>
@@ -92,37 +98,41 @@
             </ul>
         </section>
         <section class="about">
-            <h2 class="visually-hidden">О нас</h2>
-            <p class="about-desc">Мы - маленькая, но гордая<br>
-            дизайн-студия  из Краснодара.
-            </p>
-            <p class="about-desc-slogan{">Исповедуем принципы минимализма и чистоты. Ставим математический расчет<br>
-            превыше креатива. Работаем не покладая рук, как роботы.</p>
-            <p class="content-uppercase">Выполняем заказы на разработку:</p>
-            <ul class="about-list">
-                <li class="about-list-item">Веб-сайтов любой сложности</li>
-                <li class="about-list-item">Мобильных приложений для iOS и Android</li>
-                <li class="about-list-item">Слайдшоу и видео для корпоративных презентаций</li>
-            </ul>
-            <img src="img/nerds-illustration.png" alt="Логотип Нердс">
-            <p class="about-like">С 2004 года любим точность во всем:</p>
-            <ul class="percent-list">
-                <li class="percent-list-item">
-                    <p class="percent-list-level">146<span>%</span></p>
-                    <p class="level-desc">Уровень<br>
-                    самоотдачи</p>
-                </li>
-                <li class="percent-list-item">
-                    <p class="percent-list-level">100<span>%</span></p>
-                    <p class="level-desc">Соблюдение<br>
-                    сроков</p>
-                </li>
-                <li class="percent-list-item">
-                    <p class="percent-list-level">50<span>%</span></p>
-                    <p class="level-desc">Минимальная<br>
-                    предоплата</p>
-                </li>
-            </ul>
+            <div class="about-left">
+              <h2 class="visually-hidden">О нас</h2>
+              <p class="about-desc">Мы - маленькая, но гордая<br>
+              дизайн-студия  из Краснодара.
+              </p>
+              <p class="about-desc-slogan{">Исповедуем принципы минимализма и чистоты. Ставим математический расчет<br>
+              превыше креатива. Работаем не покладая рук, как роботы.</p>
+              <p class="content-uppercase">Выполняем заказы на разработку:</p>
+              <ul class="about-list">
+                  <li class="about-list-item">Веб-сайтов любой сложности</li>
+                  <li class="about-list-item">Мобильных приложений для iOS и Android</li>
+                  <li class="about-list-item">Слайдшоу и видео для корпоративных презентаций</li>
+              </ul>
+            </div>
+            <div class="about-right">
+              <img src="img/nerds-illustration.png" alt="Логотип Нердс">
+              <p class="about-like">С 2004 года любим точность во всем:</p>
+              <ul class="percent-list">
+                  <li class="percent-list-item">
+                      <p class="percent-list-level">146<span>%</span></p>
+                      <p class="level-desc">Уровень<br>
+                      самоотдачи</p>
+                  </li>
+                  <li class="percent-list-item">
+                      <p class="percent-list-level">100<span>%</span></p>
+                      <p class="level-desc">Соблюдение<br>
+                      сроков</p>
+                  </li>
+                  <li class="percent-list-item">
+                      <p class="percent-list-level">50<span>%</span></p>
+                      <p class="level-desc">Минимальная<br>
+                      предоплата</p>
+                  </li>
+              </ul>
+            </div>
         </section><!-- не забудь прикрутить картинку Нердс фоном -->
         <section class="partners">
             <h2 class="visually-hidden">Партнеры</h2>
@@ -134,7 +144,10 @@
             </ul>
         </section>
     </main>
-    <footer class="main-footer">
+
+
+
+    <footer class="main-footer positioner">
         <section class="main-footer-address">
             <h3>Nerds Design Studio</h3>
             <address class="main-footer-content">
@@ -147,13 +160,19 @@
                 </p>
             </address>
             <a class="button main-footer-button" href="#">Напишите нам</a>
-            <img src="img/map1.png" width="1440" height="416" alt="расположение студии Нердс на карте">
+
         </section>
 
+
+        <img class="imgStretch"src="img/map1.png" width="1440" height="416" alt="расположение студии Нердс на карте">
+
         <section class="main-footer-social">
+          <div class="footer-right">
             <h2>Давайте дружить, это выгодно!</h2>
             <p>Скидка 10% для друзей из социальных сетей.</p>
-            <ul class="social-list">
+          </div>
+        <div class="footer-left">
+          <ul class="social-list">
                 <li>
                     <a class="social-button" href="#">Вконтакте</a>
                 </li>
@@ -163,8 +182,10 @@
                 <li>
                     <a class="social-button" href="#">Инстаграм</a>
                 </li>
-            </ul>
+          </ul>
+        </div>
         </section>
     </footer>
+
 </body>
 </html>
