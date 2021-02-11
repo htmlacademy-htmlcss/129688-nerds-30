@@ -53,9 +53,10 @@
 
 .page-body {
   min-height: 100%;
-  display: grid;
+
+  /* display: grid;
   grid-template-rows: min-content 1fr min-content;
-  align-content: start;
+  align-content: start; */
 
 
 
@@ -79,9 +80,12 @@
   align-content: start;
 */
 }
+
 .positioner {
   width: 1160px;
   margin: 0 auto;
+  padding:0 20px;
+  outline: 1px solid cyan;
 }
 
 a {
@@ -97,6 +101,7 @@ img {
   background-color:var(--basic-light-grey);
   outline: 3px solid rgba(0, 255, 0, 0.7);
   outline-offset: -5px;
+  margin-bottom: 0;
 }
 
 
@@ -176,18 +181,53 @@ img {
 делать через классы и js.
 И тут зануда скажет: "А если отключат js?"
 */
+
+.index-page-container {
+  outline: 5px solid red;
+  outline-offset: -5px;
+}
+.grey-background {
+background-color: var(--basic-light-grey);
+
+}
 .visually-hidden {
   display: none;
 }
 .features-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+
+
 }
+
+.feature-item {
+  display: grid;
+  grid-template-columns: repeat(12, 60px);
+  column-gap: 40px;
+}
+
+
+.feature-content-block {
+  grid-column: 1/5;
+}
+.feature-image-block {
+  grid-column: 6/-1;
+}
+
 .feature-item-title {
 font-weight: 500;
 font-size: 55px;
 line-height: 55px;
 color: var(--basic-black);
+
+
 }
+/*временно прячем 2 блока слайдера*/
+.feature-item-hidden {
+  display: none;
+}
+
 
 .button {
   font-weight: 500;
@@ -199,6 +239,8 @@ color: var(--basic-black);
   background-color:  var(--light-red);
   color:  var(--basic-white);
   text-transform: uppercase;
+  display: inline-block;
+
 }
 /*при фокусировка напр табами и наведении*/
 .button:focus,
@@ -223,10 +265,12 @@ color: var(--basic-black);
 .services-list {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 360px);
+  column-gap: 40px;
   margin: 0;
   padding: 0;
   margin-bottom: 80px;
+
 }
 .services-list-item {
   outline: 5px solid rgba(0, 255, 255 , 0.3);
@@ -295,16 +339,16 @@ a.button-green:active {
 /*About*/
 .about {
   display: grid;
-  grid-template-columns: repeat (12, 60px);
-  grid-gap: 20px;
+  grid-template-columns: repeat(12, 60px);
+  grid-gap: 40px;
   outline: 5px solid rgba(180, 32, 131, 0.3);
   outline-offset: -5px;
 }
 .about-left{
-  grid-column: 1/16;
+  grid-column: 1/8;
 }
 .about-right{
-  grid-column: 17/24;
+  grid-column: 10/-1;
 }
 
 .about-desc {
@@ -353,6 +397,7 @@ a.button-green:active {
 .percent-list-item {
 
 }
+ain-footer
 
 .percent-list-level {
   font-weight: bold;
@@ -372,6 +417,8 @@ a.button-green:active {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
 }
 /*footer*/
 
@@ -379,7 +426,9 @@ a.button-green:active {
   outline: 5px solid rgba(255, 0, 0, 0.7);
 }
 .main-footer-address {
-  width: 319px;
+  height: 318px;
+  width: 310px;
+
   outline: 5px solid rgba(255, 0, 0, 0.7);
   outline-offset: -5px;
 }
@@ -427,11 +476,11 @@ a.button-green:active {
 
 }
 .footer-left{
-  grid-column: 1/6;
+  grid-column: 1/4;
 }
 .footer-right{
-  grid-column: 7/24;
-  justify-self: start;
+  grid-column: 5/-1;
+  /* justify-self: start; */
 }
 
 
@@ -466,6 +515,27 @@ a.button-green:active {
 
 
 /*Начало страницы catalog.html*/
+.container {
+  display: grid;
+  grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+  column-gap: 40px;
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+  outline-offset: -5px;
+}
+.filters{
+  grid-column: 1/4;
+  outline: 5px solid rgba(0, 0, 255, 0.7);
+  outline-offset: -5px;
+}
+
+.results-column {
+  grid-column: 5/-1;
+  align-content: start;
+  outline: 5px solid rgba(0, 0, 255, 0.7);
+  outline-offset: -5px;
+}
+
+
 .catalog-title {
   font-weight: 500;
   font-size: 55px;
@@ -557,6 +627,13 @@ padding: 17px 89px 15px 88px;
 
 .results-list {
   list-style: none;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  outline: 5px solid rgba(255, 0, 221, 0.7);
+  outline-offset: -5px;
+  margin: 0;
+  padding: 0;
+
 }
 .results-hover {
   width:360px;
