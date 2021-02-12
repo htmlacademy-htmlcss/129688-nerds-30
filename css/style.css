@@ -128,6 +128,8 @@ img {
   list-style: none;
   outline: 5px solid rgba(0, 255, 255, 0.3);
   outline-offset: -5px;
+  display: grid;
+  justify-items:
 }
 
 
@@ -143,6 +145,7 @@ img {
   outline: none; /*убирает контур фокуса*/
   text-decoration: none;/*убирает подчеркивание текста*/
   text-transform: uppercase;
+
  }
 
 /*при фокусировка и наведении*/
@@ -348,7 +351,7 @@ a.button-green:active {
   grid-column: 1/8;
 }
 .about-right{
-  grid-column: 10/-1;
+  grid-column: 9/-1;
 }
 
 .about-desc {
@@ -416,10 +419,20 @@ ain-footer
 .partners-list {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 260px);
+  column-gap: 40px;
   margin: 0;
   padding: 0;
+  min-height: 130px;
+  align-items: center;
+  justify-items: center;
+
 }
+.partners-list-item {
+  align-self: center;
+  justify-self: center;
+}
+
 /*footer*/
 
 .main-footer {
@@ -431,6 +444,10 @@ ain-footer
 
   outline: 5px solid rgba(255, 0, 0, 0.7);
   outline-offset: -5px;
+
+
+  /* transform: translate(0, 376px); */
+  /* не вкатывает ((( */
 }
 .main-footer-address h3 {
   font-weight: bold;
