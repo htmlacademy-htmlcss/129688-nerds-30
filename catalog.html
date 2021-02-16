@@ -37,7 +37,7 @@
        <section class="filters"><!-- фильтры -->
             <h2 class="visually-hidden">фильтр шаблонов</h2>
             <form class="filters-form" method="get" action="https://echo.htmlacademy.ru/">
-                <fieldset>
+                <fieldset class = "fieldset-cost">
                     <legend class="legend-title">Стоимость:</legend>
                     <input class="range" type="range" min="0" max="15000" step="10"><br>
 
@@ -48,7 +48,7 @@
                 </fieldset>
 
 
-                <fieldset>
+                <fieldset class="fieldset-grid">
                     <legend class="grid-view">Сетка:</legend>
                     <ul>
                       <li>
@@ -99,6 +99,7 @@
         <section class="sort-section">
           <h2 class="visually-hidden">Сортировка</h2>
           <fieldset>
+            <div class="sort-section-title">
               <legend class="legend-title">Сортировать:</legend>
               <ul class="sort-section-list">
                   <li><a class="sort-section-link sort-section-active" href="">По цене</a></li>
@@ -107,6 +108,7 @@
                   <li><span></span></li><!-- по-убыванию -->
                   <li><span></span></li><!-- по-позрастанию -->
               </ul>
+            </div>
           </fieldset>
         </section>
         <section class="results">
