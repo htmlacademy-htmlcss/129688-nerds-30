@@ -464,6 +464,19 @@ a.button-green:active {
   position: relative;
 }
 
+.percent-sup {
+  font-size: 26px;
+  line-height: 40px;
+  top: -0.5em;
+  /* position: absolute; */
+  /* vertical-align: baseline; */
+  /* font-size: 26px;
+  line-height: 0;
+  position: absolute;
+  vertical-align: baseline;
+  margin-top: 44px; */
+}
+
 
 /* .percent-list-level span{
   font-weight: bold;
