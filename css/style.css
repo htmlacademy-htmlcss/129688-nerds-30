@@ -188,31 +188,31 @@ img {
 .basket-container {
   position: relative;
   justify-self: flex-end;
-  outline: 5px solid #ff0000;
+  /* outline: 1px solid #ff0000; */
 }
 
 
 .basket-link::before {
   content: "";
+  /*absolute нужет потому что content  - это строчный,
+  а строчному нельзя задать ширину и высоту, задали абсолют,
+  появились размеры
+  */
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   top: 6px;
-  left: -20px;
-  background-image: url("img/basket.svg");
+  left: 0px;
+  background-image: url("../img/basket.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
 
-  /* background-color: red; */
-
 }
 
-
-
 .basket-link {
-  outline: 5px solid rgba(255, 0, 255, 0.3);
+  /* outline: 1px solid rgba(255, 0, 255, 0.3); */
   outline-offset: -5px;
-  padding-left: 50px;
+  padding-left: 25px;
 
 
 }
@@ -237,8 +237,8 @@ img {
 */
 
 .index-page-container {
-  outline: 5px solid red;
-  outline-offset: -5px;
+  /* outline: 5px solid red;
+  outline-offset: -5px; */
 }
 .grey-background {
 background-color: var(--basic-light-grey);
@@ -578,17 +578,23 @@ a.button-green:active {
   min-height: 130px;
   align-items: center;
   justify-items: center;
+  /* background-color: cyan; */
+
 
 }
 .partners-list-item {
   align-self: center;
   justify-self: center;
+
+  /* background-image: url(../img/stick.png);
+  background-position: 100% 50%;
+  background-repeat: no-repeat; */
 }
 
 /*footer*/
 
 .main-footer {
-  outline: 5px solid rgba(255, 0, 0, 0.7);
+  /* outline: 5px solid rgba(255, 0, 0, 0.7); */
 }
 /* .disappear {
   position: relative;
@@ -611,6 +617,8 @@ a.button-green:active {
 
   /* transform: translate(0, 376px); */
   /* не вкатывает ((( */
+
+  text-align: center;
 }
 .main-footer-address h3 {
   font-weight: bold;
@@ -862,21 +870,30 @@ padding: 17px 89px 15px 88px;
 
 .results-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display:grid;
   grid-template-columns: repeat(2, 360px);
   column-gap: 40px;
   row-gap: 30px;
   outline: 5px solid rgba(255, 0, 221, 0.7);
   outline-offset: -5px;
-  margin: 0;
-  padding: 0;
 
 }
 .results-hover {
   width:360px;
   height: 231px;
   /*display:none;*/
+  text-align: center;
+  padding: 0;
+  padding-top: 26px;
+
 }
+.results-hover h3 {
+  margin: 0;
+  padding: 0;
+}
+
 /*название карточки*/
 .results-link-title {
   font-weight: bold;
@@ -898,6 +915,7 @@ padding: 17px 89px 15px 88px;
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-grey);
+
   margin-bottom: 32px;
 }
 /*будет кнопкой*/
@@ -917,11 +935,20 @@ padding: 17px 89px 15px 88px;
 .card-container {
   align-self: center;
   justify-self: center;
+  box-sizing: border-box;
+  width: 358px;
+  min-height: 618px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-container img {
   /* position: relative;
   z-index: 1; */
+  width: 358px;
+  height: 578px;
+  margin: 0;
+
 }
 .card-container:hover .results-hover{
   /*
