@@ -77,12 +77,13 @@
                         <img src="img/nerds-index-slide3.png" width="760" height="431" alt="Слайд. Только хардкор.">
                       </div>
                     </li>
+                    <div class="slider-controls">
+                      <button class="current" type="button" aria-label="Первый слайд"></button>
+                      <button type="button" aria-label="Второй слайд"></button>
+                      <button type="button" aria-label="Третий слайд"></button>
+                    </div>
                 </ul><!-- конец слайдера -->
-                <ul><!-- кнопки слайдера -->
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+
             </section>
           </div><!--конец центровщика-->
         </div><!--конец блока с серым фоном-->
@@ -161,7 +162,7 @@
           <section class="partners">
               <h2 class="visually-hidden">Партнеры</h2>
               <ul class="partners-list">
-                  <li class="partners-list-item"><a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/p-htmlacademy.png" height="67" width="199" alt="Перейти на главную страницу html academy"></a></li>
+                  <li class="partners-list-item"><a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/p-htmlacademy.svg" height="67" width="199" alt="Перейти на главную страницу html academy"></a></li>
                   <li class="partners-list-item"><a href=""><img src="img/p-borodinski.png" height="90" width="209" alt="Перейти на главную страницу сайта Borodinski"></a></li>
                   <li class="partners-list-item"><a href=""><img src="img/p-pink.png" height="52" width="185" alt="Перейти на главную страницу сайта Pink"></a></li>
                   <li class="partners-list-item"><a href=""><img src="img/p-mishka.png" height="84" width="173" alt="Перейти на главную страницу сайта Mishka"></a></li>
@@ -173,8 +174,8 @@
 
 
     <footer class="main-footer">
-      <!-- disappear не сработал - уберу (( -->
-        <div class="positioner disappear">
+
+        <div class="positioner">
           <section class="main-footer-address">
               <h3>Nerds Design Studio</h3>
               <address class="main-footer-content">
@@ -201,13 +202,16 @@
           <div class="footer-left">
             <ul class="social-list">
                   <li>
-                      <a class="social-button" href="#">Вконтакте</a>
+                      <a class="social-button" href="#"><span class="visually-hidden">Вконтакте</span>
+                        <svg width="27" height="16" viewBox="0 0 128 76"><path d="M125,5.15c.89-3,0-5.15-4.23-5.15h-14a6,6,0,0,0-6.09,4S93.59,21.31,83.5,32.59c-3.26,3.26-4.74,4.3-6.52,4.3-.89,0-2.18-1-2.18-4V5.15c0-3.56-1-5.15-4-5.15h-22a3.37,3.37,0,0,0-3.56,3.22c0,3.37,5,4.15,5.56,13.64V37.48c0,4.52-.82,5.34-2.6,5.34-4.74,0-16.29-17.43-23.13-37.38C23.72,1.57,22.38,0,18.8,0H4.8C.8,0,0,1.88,0,4c0,3.71,4.75,22.1,22.1,46.42C33.67,67,50,76,64.8,76c8.9,0,10-2,10-5.45V58c0-4,.84-4.8,3.66-4.8,2.08,0,5.64,1,13.94,9C101.9,71.74,103.46,76,108.8,76h14c4,0,6-2,4.85-6s-5.8-9.64-11.81-16.4c-3.27-3.86-8.16-8-9.64-10.09-2.08-2.67-1.49-3.86,0-6.23,0,0,17-24,18.83-32.18Z" fill="#333333"/>
+                        </svg>
+                      </a>
                   </li>
                   <li>
-                      <a  class="social-button" href="">Фейсбук</a>
+                      <a  class="social-button" href=""><span class="visually-hidden">Фейсбук</span></a>
                   </li>
                   <li>
-                      <a class="social-button" href="#">Инстаграм</a>
+                      <a class="social-button" href="#"><span class="visually-hidden">Инстаграм</span></a>
                   </li>
             </ul>
           </div>
