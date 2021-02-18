@@ -86,6 +86,62 @@
   /* outline: 1px solid cyan; */
   position: relative;
 }
+/*начало блока для управления слайдером*/
+.main-slider {
+
+
+}
+.slider-controls {
+
+  position: absolute;
+  bottom: 96px;
+  left: 40%;
+  margin-left: 44px;
+  z-index: 30;
+
+  display: flex;
+  width: 88px;
+  justify-content: space-between;
+
+}
+
+.slider-controls button{
+  padding: 0;
+  width: 18px;
+  height: 18px;
+
+  position: relative;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 50%;
+  /*делаем прозрачную границу, потому, что у браузера
+  есть свои стили*/
+  border:transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+/*если у контроллера слайдов есть этот класс,
+то она изменит свой фон, т.е. активный контроллер*/
+
+.slider-controls button.current:after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid #C1C1C1;
+  display: block;
+}
+
+
+/*конец блока для управления слайдером*/
+
+
+
 
 a {
   text-decoration: none;
@@ -253,7 +309,7 @@ background-color: var(--basic-light-grey);
   list-style: none;
   margin: 0;
   padding: 0;
-
+   position: relative; /*для кнопок слайдера */
 
 
 }
@@ -263,6 +319,7 @@ background-color: var(--basic-light-grey);
   grid-template-columns: repeat(12, 60px);
   grid-template-rows: 431px;
   column-gap: 40px;
+  position: relative;
   /* display: flex;
   justify-content: space-between; */
 }
@@ -596,10 +653,7 @@ a.button-green:active {
 .main-footer {
   /* outline: 5px solid rgba(255, 0, 0, 0.7); */
 }
-/* .disappear {
-  position: relative;
-  margin: 0;
-} */
+
 
 .main-footer-address {
   position: absolute;
@@ -878,11 +932,12 @@ padding: 17px 89px 15px 88px;
   row-gap: 30px;
   outline: 5px solid rgba(255, 0, 221, 0.7);
   outline-offset: -5px;
+  margin-bottom: 55px;
 
 }
 .results-hover {
   width:360px;
-  height: 231px;
+
   /*display:none;*/
   text-align: center;
   padding: 0;
@@ -962,8 +1017,22 @@ padding: 17px 89px 15px 88px;
 }
 
 
+
 .pagination-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  align-items: center;
+
+}
+
+.pagination-list li {
+  margin-right: 11px;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 .pagination-item{
@@ -976,6 +1045,7 @@ color: var(--basic-black);
 background-color: var(--basic-light-grey);
 margin-bottom: 10px;
 display:inline-block;
+/* box-sizing: border-box; */
 }
 .pagination-item:focus,
 .pagination-item:hover {
@@ -993,7 +1063,9 @@ display:inline-block;
   color: var(--basic-black);
   border: 3px solid #DBDBDB;
   border-radius: 3px;
-  padding: 17px 20px 15px 20px;
+  padding: 14px 17px 12px 17px;
+  box-sizing: border-box;
+  display: block;
   /*
   margin-bottom: 10px;
   display:inline-block;
