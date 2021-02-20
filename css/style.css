@@ -388,7 +388,8 @@ margin-bottom: 25px;
 
 /*Sirvices*/
 .services{
-  outline: 5px solid rgba(255, 0, 0 , 0.3);
+  /* outline: 5px solid rgba(255, 0, 0 , 0.3); */
+  padding-top: 80px;
 
 }
 .services-list {
@@ -403,8 +404,8 @@ margin-bottom: 25px;
 
 }
 .services-list-item {
-  outline: 5px solid rgba(0, 255, 255 , 0.3);
-  outline-offset: -5px;
+  /* outline: 5px solid rgba(0, 255, 255 , 0.3);
+  outline-offset: -5px; */
 }
 .services-list-title {
   font-weight: bold;
@@ -474,6 +475,7 @@ a.button-green:active {
   /* outline: 5px solid rgba(180, 32, 131, 0.3);
   outline-offset: -5px; */
   border-top: 2px solid var(--basic-light-grey);
+
 }
 .about-left{
   grid-column: 1/8;
@@ -526,10 +528,29 @@ a.button-green:active {
 }
 .about-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+
+
+}
+/*стилизованные булиты в виде красной полосочки*/
+.about-list-item::before {
+  height: 2px;
+  width: 25px;
+  content: "";
+  background-color: var(--light-red);
+  display: inline-block;
+  margin-right: 7px;
+
+
 }
 .about-list-item {
-  margin-bottom: 35px;;
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+
 }
+
 .about-like {
   font-weight: bold;
   font-size: 16px;
@@ -549,6 +570,7 @@ a.button-green:active {
   padding: 0;
   margin: 0;
   /* margin-top: -45px; */
+  margin-bottom: 75px;
 
 
 }
@@ -635,18 +657,74 @@ a.button-green:active {
   min-height: 130px;
   align-items: center;
   justify-items: center;
-  /* background-color: cyan; */
-
-
+  border-top: 2px solid var(--basic-light-grey);
+  border-bottom: 2px solid var(--basic-light-grey);
+  margin-bottom: 80px;
 }
+
 .partners-list-item {
   align-self: center;
   justify-self: center;
-
-  /* background-image: url(../img/stick.png);
-  background-position: 100% 50%;
-  background-repeat: no-repeat; */
+  padding-top: 46px;
+  padding-bottom: 44px;
+  opacity: 0.2;
+  display: flex;
 }
+
+.partners-list-item::after {
+  height: 52px;
+  width: 2px;
+  content: "";
+  background-color: var(--basic-light-grey);
+  display: inline-block;
+  margin-left: 48px;
+  opacity: 0.2;
+  align-self: center;
+}
+
+.partners-list-item:last-child::after{
+  display: none;
+}
+
+.partners-list-item:focus,
+.partners-list-item:hover {
+  opacity: 1;
+}
+
+.partners-list-item:active {
+  opacity: 0.1;
+}
+
+/* .ya {
+  display: flex;
+}
+
+.ya::after{
+height: 52px;
+width: 2px;
+content: "";
+background-color: var(--basic-light-grey);
+display: inline-block;
+margin-left: 48px;
+opacity: 1;
+align-self: center;
+}
+
+.ya:last-child::after{
+  display: none;
+  margin: 0;
+  padding: 0;
+
+} */
+
+
+
+
+
+
+
+
+
 
 /*footer*/
 
@@ -665,14 +743,11 @@ a.button-green:active {
 
   margin: 0;
 
-  outline: 5px solid rgba(255, 0, 0, 0.7);
-  outline-offset: -5px;
-
-
   /* transform: translate(0, 376px); */
   /* не вкатывает ((( */
 
   text-align: center;
+  background-color: var(--basic-white);
 }
 .main-footer-address h3 {
   font-weight: bold;
@@ -682,6 +757,7 @@ a.button-green:active {
   color: var(--basic-black);
   /*нужен ли этот отступ поглядим попозже*/
   margin-top: 0;
+  padding-top:49px;
 }
 .main-footer-content, .contacts-phone {
   font-weight: normal;
@@ -690,9 +766,16 @@ a.button-green:active {
   line-height: 18px;
   color: var(--basic-grey);
 }
+
+.contacts-phone {
+  padding-bottom: 37px;
+}
+
 .main-footer-button {
   padding: 17px 44px 15px 44px;
 }
+
+
 
 /*при фокусировка напр табами и наведении*/
 .main-footer-button:focus,
@@ -715,17 +798,32 @@ a.button-green:active {
 
 /*Social*/
 .main-footer-social {
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
   display: grid;
   grid-template-columns: repeat(12, 60px);
   column-gap: 40px;
+  justify-items: start;
+  align-items: center;
+  /* padding-top: 68px; */
 
 }
 .footer-left{
-  grid-column: 1/4;
+  grid-column: 1/5;
+  padding: 0;
+  margin: 0;
+  margin-top: 68px;
+  margin-bottom: 68px;
 }
 .footer-right{
   grid-column: 5/-1;
   /* justify-self: start; */
+  padding: 0;
+  margin: 0;
+  margin-top: 75px;
+  margin-bottom: 74px;
 }
 
 
@@ -749,6 +847,38 @@ a.button-green:active {
 
 .social-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 9px;
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+  background: linear-gradient(0deg, #E1E1E1, #E1E1E1), #FFFFFF;
+
+}
+
+/*при фокусировка напр табами и наведении*/
+.social-button:focus,
+.social-button:hover {
+  background-image:none;
+  background-color: var(--red);
+ }
+/*при нажатии*/
+.social-button:active {
+  background-image:none;
+  background-color: var(--dark-red);
+}
+
+.social-button:active svg path{
+  fill:rgba(255, 255, 255, 0.3);
 }
 
 
