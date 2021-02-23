@@ -667,8 +667,9 @@ a.button-green:active {
   justify-self: center;
   padding-top: 46px;
   padding-bottom: 44px;
-  opacity: 0.2;
-  display: flex;
+  position: relative; /*для позиционирования псевдоэлемента*/
+  /* display: flex; */
+  padding-right: 48px;
 }
 
 .partners-list-item::after {
@@ -676,22 +677,28 @@ a.button-green:active {
   width: 2px;
   content: "";
   background-color: var(--basic-light-grey);
-  display: inline-block;
-  margin-left: 48px;
-  opacity: 0.2;
-  align-self: center;
+   opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;/*это значение выравнивает по вертикали по центру*/
+  bottom: 0;/*это значение выравнивает по вертикали по центру*/
+  margin: auto 0;/*это значение выравнивает по вертикали по центру*/
+
 }
 
 .partners-list-item:last-child::after{
   display: none;
 }
 
-.partners-list-item:focus,
-.partners-list-item:hover {
+.partners-list-link {
+  opacity: 0.2;
+}
+.partners-list-link:focus,
+.partners-list-link:hover {
   opacity: 1;
 }
 
-.partners-list-item:active {
+.partners-list-link:active {
   opacity: 0.1;
 }
 
@@ -787,10 +794,15 @@ align-self: center;
   background-color: var(--dark-red);
 }
 
+.footer-map-container {
+  height: 416px;
+}
+
 .imgStretch {
   min-width: 100%;
   display: block;
   height: 416px;
+  object-fit: cover;
 }
 
 
@@ -877,7 +889,8 @@ align-self: center;
   background-color: var(--dark-red);
 }
 
-.social-button:active svg path{
+
+.social-button:active .social-image{
   fill:rgba(255, 255, 255, 0.3);
 }
 
