@@ -194,6 +194,9 @@
         <div class="footer-map-container">
           <img class="imgStretch"src="img/map2.png" width="1440" height="416" alt="расположение студии Нердс на карте">
         </div>
+
+
+
         <div class="positioner">
           <section class="main-footer-social">
             <div class="footer-left">
@@ -229,6 +232,29 @@
           </section>
         </div><!--конец центровщика-->
     </footer>
+    <section class="modal-letter">
+      <div class="modal-wrapper">
+            <h2>Напишите нам
+              <button class="modal-close" type="button"></button>
+            </h2>
 
+          <form class="letter-form" action="https://echo.htmlacademy.ru" method="post">
+          <p class="letter-form-par">
+            <label for="form-name">Ваше имя</label>
+            <input class="form-name-input" id="form-name" type="text" name="user-name" placeholder="Имя Фамилия">
+          </p>
+          <p class="letter-form-par">
+            <label for="form-email">Ваш email:</label>
+            <input class="form-email-input" id="form-email" type="email" name="user-email" placeholder="email@example.com">
+          </p>
+
+          <p class="letter-form-par">
+            <label for="letter-content">Текст письма:</label><br>
+            <textarea class="letter-message" name="user-letter" id="letter-content" cols="30" rows="10">В свободной форме</textarea>
+          </p>
+          <button class="button letter-form-button" type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
 </body>
 </html>

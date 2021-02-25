@@ -40,13 +40,37 @@
             <h2 class="visually-hidden">фильтр шаблонов</h2>
             <form class="filters-form" method="get" action="https://echo.htmlacademy.ru/">
                 <fieldset class = "fieldset-cost">
-                    <legend class="legend-title">Стоимость:</legend>
-                    <input class="range" type="range" min="0" max="15000" step="10"><br>
+                  <legend class="legend-title">Стоимость:</legend>
+                   <div class="range-filter">
+                    <div class="range-controls"><!--элемент с ползулнками-->
+                        <!-- Первый блок указывает полную ширину прогресс-бара.
+                        Второй, вложенный в него, указывает выбранный диапазон. -->
+                        <div class="scale">
+                          <div class="bar" style="width: 30%; margin-left: 20%">
+                          </div>
+                        </div>
+                        <div class="toggle toggle-min" tabindex="0" style="left: 20%"></div>
+                        <div class="toggle toggle-max" tabindex="0" style="left: 50%"></div>
+                        <!-- <input class="range" type="range" min="0" max="15000" step="10"><br> -->
+                      </div>
+                      <div class="price-controls"> <!--поля для ввода цены-->
+                        <!-- <label class="range-label" for="from">От</label>
+                        <input class="range-input" type="number" name="start-cost" min="1" max="15000" id="from">
+                        <label class="range-label" for="to">До</label>
+                        <input class="range-input" type="number" name="end-cost" min="1" max="15000" id="to"> -->
+                        <label class="min-price">
+                          от <input type="number" name="min-price" value="0">
+                        </label>
+                        <label class="max-price">
+                          до <input type="number" name="max-price" value="15000">
+                        </label>
 
-                    <label class="range-label" for="from">От</label>
-                    <input class="range-input" type="number" name="start-cost" min="1" max="15000" id="from">
-                    <label class="range-label" for="to">До</label>
-                    <input class="range-input" type="number" name="end-cost" min="1" max="15000" id="to">
+
+
+
+                      </div><!--price-controls-->
+                    <div><!--range-controls-->
+                  </div><!--range-filter-->
                 </fieldset>
 
 
@@ -232,7 +256,6 @@
       </div>
       </section>
     </div><!--конец центровщика-->
-</footer>
-
+  </footer>
 </body>
 </html>
