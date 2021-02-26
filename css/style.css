@@ -1333,7 +1333,7 @@ display:inline-block;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  padding: 17px 77px 15px 78px;
+  padding: 71px 77px 15px 78px;
   text-transform: uppercase;
   color: var(--basic-black);
   background-color: var(--basic-light-grey);
@@ -1347,10 +1347,6 @@ display:inline-block;
   color: rgba(0, 0, 0, 0.3);
 }
 
-.modal-wrapper {
-  padding: 63px 99px 84px 99px;
-  box-sizing: border-box;
-}
 
 
 /*Модальное окно. Написать письмо.*/
@@ -1362,27 +1358,43 @@ display:inline-block;
   box-sizing: border-box;
   /* position: absolute; */
   position: fixed;
-  top: 0;
+  /* top: 0;
   right: 0;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
   margin: 0 auto;
   overflow: auto;
   z-index: 200;
   /* display: none; */
+  padding: 0;
+
+  /* этим центруем всплывашку */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+/*------------------------ */
+
+
 
 }
 
+.modal-wrapper {
+  margin: 63px 99px 84px 100px;
+  box-sizing: border-box;
+}
+
+
 
 .modal-letter h2 {
+  width: 760px;
   font-style: normal;
   font-weight: bold;
   font-size: 45px;
   line-height: 53px;
   position: relative;
-  outline: 1px solid pink;
   padding: 0;
   margin: 0;
+  margin-bottom: 37px;
 
 
 }
@@ -1395,10 +1407,18 @@ display:inline-block;
   border: none;
   background-color: transparent;
   position: absolute;
-  right: 0;
-  top:10px;
+  right: -7px;
+  top:14px;
 
 }
+
+.modal-close:hover {
+  background-image: url(../img/closeHover.png);
+}
+.modal-close:active {
+  background-image: url(../img/closeActive.png);
+}
+
 
 
 
@@ -1423,14 +1443,16 @@ display:inline-block;
 .letter-form input {
   width: 360px;
   box-sizing: border-box;
-  padding: 16px 14px 16px 16px;
+  padding: 14px 14px 14px 14px;
 }
 .letter-message {
   width: 760px;
   box-sizing: border-box;
   padding: 16px 14px 16px 16px;
-  margin-bottom: 47px;
+  margin: 0;
+  margin-bottom: 48px;
 }
+
 
 .letter-form input:focus {
   border: 2px solid #000000;
@@ -1446,11 +1468,24 @@ display:inline-block;
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-black);
+  margin: 0;
+  padding: 0;
 }
+
+.letter-form-label {
+  margin-bottom: 9px;
+}
+
+
+
+.your-mail {
+  margin-bottom: 34px;
+}
+
 
 .letter-form-par label {
   display: block;
-  margin-bottom: 9px;
+
 }
 
 .letter-form-button {
