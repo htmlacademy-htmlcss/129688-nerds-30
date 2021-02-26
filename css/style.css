@@ -33,6 +33,7 @@
   --basket-grey:#a6a6a6;
   --pagination-grey:#dfdfdf;
   --pagination-grey-dark:#d5d5d5;
+  --toggle-grey: #ababab;
   --light-red:#fb565a;
   --red:#e74246;
   --dark-red:#d7373b;
@@ -388,7 +389,8 @@ margin-bottom: 25px;
 
 /*Sirvices*/
 .services{
-  outline: 5px solid rgba(255, 0, 0 , 0.3);
+  /* outline: 5px solid rgba(255, 0, 0 , 0.3); */
+  padding-top: 80px;
 
 }
 .services-list {
@@ -403,8 +405,8 @@ margin-bottom: 25px;
 
 }
 .services-list-item {
-  outline: 5px solid rgba(0, 255, 255 , 0.3);
-  outline-offset: -5px;
+  /* outline: 5px solid rgba(0, 255, 255 , 0.3);
+  outline-offset: -5px; */
 }
 .services-list-title {
   font-weight: bold;
@@ -474,6 +476,7 @@ a.button-green:active {
   /* outline: 5px solid rgba(180, 32, 131, 0.3);
   outline-offset: -5px; */
   border-top: 2px solid var(--basic-light-grey);
+
 }
 .about-left{
   grid-column: 1/8;
@@ -526,10 +529,29 @@ a.button-green:active {
 }
 .about-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+
+
+}
+/*стилизованные булиты в виде красной полосочки*/
+.about-list-item::before {
+  height: 2px;
+  width: 25px;
+  content: "";
+  background-color: var(--light-red);
+  display: inline-block;
+  margin-right: 7px;
+
+
 }
 .about-list-item {
-  margin-bottom: 35px;;
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+
 }
+
 .about-like {
   font-weight: bold;
   font-size: 16px;
@@ -549,6 +571,7 @@ a.button-green:active {
   padding: 0;
   margin: 0;
   /* margin-top: -45px; */
+  margin-bottom: 75px;
 
 
 }
@@ -635,18 +658,81 @@ a.button-green:active {
   min-height: 130px;
   align-items: center;
   justify-items: center;
-  /* background-color: cyan; */
-
-
+  border-top: 2px solid var(--basic-light-grey);
+  border-bottom: 2px solid var(--basic-light-grey);
+  margin-bottom: 80px;
 }
+
 .partners-list-item {
   align-self: center;
   justify-self: center;
-
-  /* background-image: url(../img/stick.png);
-  background-position: 100% 50%;
-  background-repeat: no-repeat; */
+  padding-top: 46px;
+  padding-bottom: 44px;
+  position: relative; /*для позиционирования псевдоэлемента*/
+  /* display: flex; */
+  padding-right: 48px;
 }
+
+.partners-list-item::after {
+  height: 52px;
+  width: 2px;
+  content: "";
+  background-color: var(--basic-light-grey);
+   opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;/*это значение выравнивает по вертикали по центру*/
+  bottom: 0;/*это значение выравнивает по вертикали по центру*/
+  margin: auto 0;/*это значение выравнивает по вертикали по центру*/
+
+}
+
+.partners-list-item:last-child::after{
+  display: none;
+}
+
+.partners-list-link {
+  opacity: 0.2;
+}
+.partners-list-link:focus,
+.partners-list-link:hover {
+  opacity: 1;
+}
+
+.partners-list-link:active {
+  opacity: 0.1;
+}
+
+/* .ya {
+  display: flex;
+}
+
+.ya::after{
+height: 52px;
+width: 2px;
+content: "";
+background-color: var(--basic-light-grey);
+display: inline-block;
+margin-left: 48px;
+opacity: 1;
+align-self: center;
+}
+
+.ya:last-child::after{
+  display: none;
+  margin: 0;
+  padding: 0;
+
+} */
+
+
+
+
+
+
+
+
+
 
 /*footer*/
 
@@ -665,14 +751,11 @@ a.button-green:active {
 
   margin: 0;
 
-  outline: 5px solid rgba(255, 0, 0, 0.7);
-  outline-offset: -5px;
-
-
   /* transform: translate(0, 376px); */
   /* не вкатывает ((( */
 
   text-align: center;
+  background-color: var(--basic-white);
 }
 .main-footer-address h3 {
   font-weight: bold;
@@ -682,6 +765,7 @@ a.button-green:active {
   color: var(--basic-black);
   /*нужен ли этот отступ поглядим попозже*/
   margin-top: 0;
+  padding-top:49px;
 }
 .main-footer-content, .contacts-phone {
   font-weight: normal;
@@ -690,9 +774,16 @@ a.button-green:active {
   line-height: 18px;
   color: var(--basic-grey);
 }
+
+.contacts-phone {
+  padding-bottom: 37px;
+}
+
 .main-footer-button {
   padding: 17px 44px 15px 44px;
 }
+
+
 
 /*при фокусировка напр табами и наведении*/
 .main-footer-button:focus,
@@ -704,10 +795,16 @@ a.button-green:active {
   background-color: var(--dark-red);
 }
 
+.footer-map-container {
+  height: 416px;
+  /* position: relative; */
+}
+
 .imgStretch {
   min-width: 100%;
   display: block;
   height: 416px;
+  object-fit: cover;
 }
 
 
@@ -715,17 +812,32 @@ a.button-green:active {
 
 /*Social*/
 .main-footer-social {
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
   display: grid;
   grid-template-columns: repeat(12, 60px);
   column-gap: 40px;
+  justify-items: start;
+  align-items: center;
+  /* padding-top: 68px; */
 
 }
 .footer-left{
-  grid-column: 1/4;
+  grid-column: 1/5;
+  padding: 0;
+  margin: 0;
+  margin-top: 68px;
+  margin-bottom: 68px;
 }
 .footer-right{
   grid-column: 5/-1;
   /* justify-self: start; */
+  padding: 0;
+  margin: 0;
+  margin-top: 75px;
+  margin-bottom: 74px;
 }
 
 
@@ -749,6 +861,39 @@ a.button-green:active {
 
 .social-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 9px;
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+  background: linear-gradient(0deg, #E1E1E1, #E1E1E1), #FFFFFF;
+
+}
+
+/*при фокусировка напр табами и наведении*/
+.social-button:focus,
+.social-button:hover {
+  background-image:none;
+  background-color: var(--red);
+ }
+/*при нажатии*/
+.social-button:active {
+  background-image:none;
+  background-color: var(--dark-red);
+}
+
+
+.social-button:active .social-image{
+  fill:rgba(255, 255, 255, 0.3);
 }
 
 
@@ -799,8 +944,8 @@ a.button-green:active {
   color: var(--basic-dark);
 }
 
-
-
+/* Блок с ползунком */
+/* ------------------------------------------ */
 .legend-title {
   font-weight: bold;
   font-size: 18px;
@@ -808,7 +953,110 @@ a.button-green:active {
   text-transform: uppercase;
   color: var(--basic-black);
   width: 360px;
+  margin-bottom: 48px;
 }
+
+.range-filter {
+  width: 260px;
+}
+
+/* Теперь выровняем шкалу по центру нашего элемента.
+Для этого зададим верхний внутренний отступ,
+равный общей высоте блока,
+ минус высота шкалы и всё это делённое на 2: ( (80px — 2px) / 2 = 39px ). */
+
+.range-controls {
+  height: 80px;
+  background: var(--basic-light-grey);
+  border-radius: 3px;
+  margin-bottom: 14px;
+  padding-top: 39px;
+  /* Так как внутренние отступы учитываются в размер объекта,
+  уменьшим высоту объекта на размер верхнего
+  внутреннего отступа. */
+  height: 41px;
+  padding-right: 20px;
+  padding-left: 20px;
+  /* для кружков делаем relative */
+  position:relative;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background: #d7dcde;
+
+}
+/* зеленая полосочка */
+.range-controls .bar {
+  width: 70%;
+  height: 2px;
+  background: var(--light-green);
+}
+
+.range-controls .toggle {
+
+  position: absolute;
+  top: 31px;
+  left: 0;
+
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  border: 8px solid #ffffff;
+  background-color: var(--toggle-grey);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+  /* box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.15); */
+  cursor: pointer;
+
+}
+
+/* А теперь через уникальные классы добавим позицию слева,
+для каждого элемента. */
+.range-controls .toggle-min {
+  left: 18px;
+}
+
+.range-controls .toggle-max {
+  left: 160px;
+}
+
+
+.price-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-controls label {
+  text-transform: uppercase;
+  line-height: 22px;
+}
+
+/*поля от и до */
+.price-controls input {
+  font-family: inherit;
+  font-size: inherit;
+  box-sizing: border-box;
+  width: 80px;
+  padding: 8px;
+  margin-left: 11px;
+  text-align: center;
+  color: var(--basic-dark);
+  border: none;
+  border-radius: 3px;
+  background-color: var(--basic-light-grey);
+
+}
+
+
+
+
+
+
+
+
+
+
 .filters-form ul {
   list-style: none;
 }
@@ -870,7 +1118,14 @@ padding: 17px 89px 15px 88px;
   padding: 0;
   margin: 0;
   margin-bottom: 60px;
+  border: none;
 }
+
+
+
+
+
+
 .fieldset-grid {
   padding: 0;
   margin: 0;
@@ -1078,7 +1333,7 @@ display:inline-block;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  padding: 17px 77px 15px 78px;
+  padding: 71px 77px 15px 78px;
   text-transform: uppercase;
   color: var(--basic-black);
   background-color: var(--basic-light-grey);
@@ -1092,3 +1347,149 @@ display:inline-block;
   color: rgba(0, 0, 0, 0.3);
 }
 
+
+
+/*Модальное окно. Написать письмо.*/
+.modal-letter {
+  background-color: var(--basic-white);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+  width: 960px;
+  /* height: 590px; */
+  box-sizing: border-box;
+  /* position: absolute; */
+  position: fixed;
+  /* top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0; */
+  margin: 0 auto;
+  overflow: auto;
+  z-index: 200;
+  /* display: none; */
+  padding: 0;
+
+  /* этим центруем всплывашку */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+/*------------------------ */
+
+
+
+}
+
+.modal-wrapper {
+  margin: 63px 99px 84px 100px;
+  box-sizing: border-box;
+}
+
+
+
+.modal-letter h2 {
+  width: 760px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 53px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 37px;
+
+
+}
+.modal-close {
+  width: 21px;
+  height: 21px;
+  background-image: url(../img/close.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: -7px;
+  top:14px;
+
+}
+
+.modal-close:hover {
+  background-image: url(../img/closeHover.png);
+}
+.modal-close:active {
+  background-image: url(../img/closeActive.png);
+}
+
+
+
+
+.letter-form {
+  display: flex;
+  flex-wrap:wrap;
+  width: 760px;
+  justify-content: space-between;
+}
+.letter-form input[type="text"],
+.letter-form input[type="email"],
+.letter-message {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--dark-grey);
+  border: 2px solid #d7dcde;
+  border-radius: 3px;
+}
+
+.letter-form input {
+  width: 360px;
+  box-sizing: border-box;
+  padding: 14px 14px 14px 14px;
+}
+.letter-message {
+  width: 760px;
+  box-sizing: border-box;
+  padding: 16px 14px 16px 16px;
+  margin: 0;
+  margin-bottom: 48px;
+}
+
+
+.letter-form input:focus {
+  border: 2px solid #000000;
+}
+
+.letter-form input:hover {
+  border: 2px solid #b4b9bb;
+}
+
+.letter-form-par {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--basic-black);
+  margin: 0;
+  padding: 0;
+}
+
+.letter-form-label {
+  margin-bottom: 9px;
+}
+
+
+
+.your-mail {
+  margin-bottom: 34px;
+}
+
+
+.letter-form-par label {
+  display: block;
+
+}
+
+.letter-form-button {
+  padding: 17px 83px 15px 83px;
+  outline: none;
+  display: block;
+}
