@@ -1164,8 +1164,9 @@ legend {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-image: url(../img/input/radioOff.svg);
-  background-color: var(--basic-white);
+  background-image: url(../img/input/radio-off.svg);
+  opacity: 0.4;
+  background-color: transparent;
   margin-left: -40px;
 }
 .grid-view-label {
@@ -1173,21 +1174,32 @@ legend {
 }
 
 .grid-view-radio:checked + .radio-box {
-  background-image: url(../img/input/radioOffChecked.svg);
+  background-image: url(../img/input/radio-on.svg);
+  opacity: 0.4;
 }
-.grid-view-radio:focus + .radio-box {
-  background-image: url(../img/input/radioActive.svg);
+.grid-view-radio:focus + .radio-box,
+.grid-view-radio:hover + .radio-box {
+  /* background-image: url(../img/input/radio-off.svg); */
+  background-image: url(../img/input/radio-on.svg);
+  opacity: 1;
 }
-.grid-view-radio:checked:focus + .radio-box {
-  background-image: url(../img/input/radioActiveChecked.svg);
+.grid-view-radio:checked:focus + .radio-box,
+.grid-view-radio:checked:hover + .radio-box  {
+  background-image: url(../img/input/radio-on.svg);
+  opacity: 1;
 }
 /*Disabled*/
 .grid-view-radio:disabled + .radio-box {
-  background-image: url(../img/input/radioInactive.svg);
+  background-image: url(../img/input/radio-off.svg);
+  opacity: 0.1;
 }
 .grid-view-radio:checked:disabled + .radio-box{
-  background-image: url(../img/input/radioInactiveChecked.svg);
+  background-image: url(../img/input/radio-off.svg);
+  opacity: 0.1;
 }
+
+
+
 
 /*Здесь нужно подкрутить*/
 
@@ -1206,28 +1218,54 @@ legend {
 
 /*Чекбоксы*/
 .check-input {
-  position: absolute;
+  /* первый способ */
+  /* position: absolute;
   appearance: none;
   -moz-appearance: none;
-  -webkit-appearance: none;
+  -webkit-appearance: none; */
+  /* второй способ */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 
 }
 .check-input:checked + .check-box {
-  background-image: url(../img/input/checkboxOffchecked.svg);
+
+  background-image: url(../img/input/checkbox-on.svg);
+  opacity: 0.4;
 }
-.check-input:focus + .check-box {
-  background-image: url(../img/input/checkboxFocus.svg);
+.check-input:focus + .check-box,
+.check-input:hover + .check-box {
+
+  background-image: url(../img/input/checkbox-off.svg);
+  opacity: 1;
+
 }
-.check-input:checked:focus + .check-box {
-  background-image: url(../img/input/checkboxFocusChecked.svg);
+.check-input:checked:focus + .check-box,
+.check-input:checked:hover + .check-box {
+
+  background-image: url(../img/input/checkbox-on.svg);
+  opacity: 1;
+
 }
 /*Disabled*/
 .check-input:disabled + .check-box {
-  background-image: url(../img/input/checkboxDisabled.svg);
+
+  background-image: url(../img/input/checkbox-off.svg);
+  opacity: 0.1;
 }
 .check-input:checked:disabled + .check-box {
-  background-image: url(../img/input/checkboxDisabledChecked.svg);
+
+  background-image: url(../img/input/checkbox-on.svg);
+  opacity: 0.1;
 }
+/*много селекторов, но не знаю как по-другому подобраться*/
+  .check-input:disabled + .check-box + .feature-list-disabled{
+  color: rgba(0, 0, 0, 0.3);
+}
+
 
 
 
@@ -1239,21 +1277,35 @@ legend {
   position: absolute;
   width: 23px;
   height: 23px;
-  background-image: url(../img/input/checkboxOff.svg);
-  background-color: var(--basic-white);
+  background-image: url(../img/input/checkbox-off.svg);
+  opacity: 0.4;
+  background-color: transparent;
   margin-left: -40px;
 }
 
 
 .features-button {
-background-color: var(--basic-light-grey);
 border-radius: 3px;
 text-transform: uppercase;
-color: var(--basic-black);
+background-color: var(--basic-light-grey);
 padding: 17px 89px 15px 88px;
 /*попробовал сделать отступы у этой кнопки*/
 border: none;
+
 }
+.features-button:focus,
+.features-button:hover {
+  background-color: var(--pagination-grey);
+  cursor: pointer;
+}
+
+.features-button:active {
+  background-color: var(--pagination-grey-dark);
+  color: rgba(0, 0, 0, 0.3);
+
+}
+
+
 
 .filters-form fieldset {
 
@@ -1486,38 +1538,21 @@ border: none;
   position: relative;
 }
 
-.circles-container {
-  list-style: none;
-  min-height: 40px;
-  margin: 0;
-  padding: 0;
-  background-color: var(--light-black);
+.card-container::before{
+
+  background-image: url(../img/browser.svg);
   opacity: 0.12;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.circle {
-  width: 14px;
-  height: 14px;
-  border-radius: 50px;
-  background-color: var(--basic-white);
+  display: block;
+  background-color: transparent;
+  height: 40px;
+  width: 358px;
   content: "";
-  margin: 0;
-  padding: 0;
-  margin-right: 9px;
-}
-.circle:first-child {
-  margin-left: 16px;
+
 }
 
-.card-container:hover .circles-container {
-  background-color: var(--light-black);
-  opacity: 1;
+.card-container:hover::before {
+   opacity: 1;
 }
-
-
 
 .card-container img {
   /* position: relative;
@@ -1535,10 +1570,8 @@ border: none;
   top: -300px;
   */
   background: var(--basic-light-grey);
-  outline: 1px solid  green;
+  /* outline: 1px solid  green; */
 }
-
-
 
 .pagination-list {
   list-style: none;
@@ -1548,7 +1581,6 @@ border: none;
   flex-wrap: wrap;
   margin-bottom: 50px;
   align-items: center;
-
 }
 
 .pagination-list li {
@@ -1569,14 +1601,17 @@ margin-bottom: 10px;
 display:inline-block;
 /* box-sizing: border-box; */
 }
+
 .pagination-item:focus,
 .pagination-item:hover {
   background-color:var(--pagination-grey);
 }
+
 .pagination-item:active {
   background-color:var(--pagination-grey-dark);
   color: rgba(0, 0, 0, 0.3);
 }
+
 .pagination-item-active,
 .pagination-item-active:focus,
 .pagination-item-active:hover,
@@ -1613,16 +1648,6 @@ display:inline-block;
   display:inline-block;
   /* box-sizing: border-box; */
 
-
-
-
-
-
-
-
-
-
-
 }
 .pagination-button:focus,
 .pagination-button:hover {
@@ -1632,8 +1657,6 @@ display:inline-block;
   background-color:var(--pagination-grey-dark);
   color: rgba(0, 0, 0, 0.3);
 }
-
-
 
 /*Модальное окно. Написать письмо.*/
 .modal-letter {
@@ -1700,9 +1723,6 @@ display:inline-block;
 .modal-close:active {
   background-image: url(../img/closeActive.png);
 }
-
-
-
 
 .letter-form {
   display: flex;
