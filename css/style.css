@@ -1395,9 +1395,14 @@ border: none;
   color: rgba(0, 0, 0, 0.6);
 }
 .sort-section-link:active,
-.sort-section-active {
+.sort-section-active,
+.sort-section-active:hover,
+.sort-section-active:focus,
+.sort-section-active:active {
   color: rgba(0, 0, 0, 1);
 }
+
+
 
 .descending {
   display: block;
@@ -1429,7 +1434,10 @@ border: none;
   background-position: center;
 }
 
-.descending-active-item {
+.descending-active-item,
+.descending-active-item:hover,
+.descending-active-item:focus,
+.descending-active-item:active {
   background-image: url(../img/triangle/icon-down-active.svg);
   opacity: 1;
  }
@@ -1534,6 +1542,12 @@ border: none;
   color: var(--basic-grey);
 
   margin-bottom: 32px;
+  /*от переполнения*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+
 }
 /*будет кнопкой*/
 .price-button {
