@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>HTML Academy: Нёрдс</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" href="icon.svg" type="image/svg+×ml">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="apple.png">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
 </head>
 <body class="page-body">
 
@@ -70,7 +70,7 @@
                         <div class="toggle toggle-min" tabindex="0" style="left: 20%"></div>
                         <div class="toggle toggle-max" tabindex="0" style="left: 50%"></div>
                         <!-- <input class="range" type="range" min="0" max="15000" step="10"><br> -->
-                      </div>
+                    </div>
                       <div class="price-controls"> <!--поля для ввода цены-->
                         <!-- <label class="range-label" for="from">От</label>
                         <input class="range-input" type="number" name="start-cost" min="1" max="15000" id="from">
@@ -87,11 +87,9 @@
 
 
                       </div><!--price-controls-->
-                    <div><!--range-controls-->
+                    <!-- <div>range-controls -->
                   </div><!--range-filter-->
                 </fieldset>
-
-
                 <fieldset class="fieldset-grid">
                     <legend class="grid-view">Сетка:</legend>
                     <ul class="grid-view-list">
@@ -167,9 +165,9 @@
       <div class="results-column"> <!---результаты фильтров-->
         <section class="sort-section">
           <h2 class="visually-hidden">Сортировка</h2>
-          <fieldset>
+          <!-- <fieldset> -->
             <div class="sort-section-title">
-              <legend class="legend-title">Сортировать:</legend>
+              <div class="legend-title">Сортировать:</div>
               <ul class="sort-section-list">
                   <li><a class="sort-section-link sort-section-active" href="">По цене</a></li>
                   <li><a class="sort-section-link" href="">По типу</a></li>
@@ -178,7 +176,7 @@
                   <li><a class="ascending"></a></li><!--можно добавить класс .ascending-active-item-->
               </ul>
             </div>
-          </fieldset>
+          <!-- </fieldset> -->
         </section>
 
         <section class="results">
@@ -209,7 +207,7 @@
                 </li>
                 <li class="card-container">
 
-                    <img src="img/img-barbershop.jpg" width="358" height="578" alt="Миниатура сайта Барбершоп">
+                    <img src="img/img-barbershop.jpg" width="358" height="578" alt="Миниатюра сайта Барбершоп">
                       <div class="results-hover"><!-- контейнер для hover -->
                       <h3><a href="#" class="results-link-title">Barbershop</a></h3>
                       <p class="results-hover-content">Сайт салона красоты.<br>Для мужчин, да.</p>
@@ -217,9 +215,9 @@
                       </div>
                 </li>
                 <li class="card-container">
-                    <div><!-- контейнер для трех точек -->
 
-                    <img src="img/img-mishka.jpg" width="358" height="578" alt="Миниатура сайта Mishka">
+
+                    <img src="img/img-mishka.jpg" width="358" height="578" alt="Миниатюра сайта Mishka">
                       <div class="results-hover"><!-- контейнер для hover -->
                       <h3 ><a href="#" class="results-link-title">Mishka</a></h3>
                       <p class="results-hover-content">Интернет магазин<br>вязаных игрушек</p>
@@ -228,7 +226,7 @@
                 </li>
                 <li class="card-container">
 
-                    <img src="img/img-aplus.jpg" width="358" height="578" alt="Миниатура сайта A-plus">
+                    <img src="img/img-aplus.jpg" width="358" height="578" alt="Миниатюра сайта A-plus">
                       <div class="results-hover"><!-- контейнер для hover -->
                       <h3><a href="#" class="results-link-title">A Plus</a></h3>
                       <p class="results-hover-content">Лендинг курсов повышения<br>квалификации</p>
@@ -237,7 +235,7 @@
                 </li>
                 <li class="card-container">
 
-                    <img src="img/img-kvast.jpg" width="358" height="578" alt="Миниатура сайта Кваст">
+                    <img src="img/img-kvast.jpg" width="358" height="578" alt="Миниатюра сайта Кваст">
                       <div class="results-hover"><!-- контейнер для hover -->
                         <h3><a href="#" class="results-link-title">Кваст</a></h3>
                         <p class="results-hover-content">Промо-сайт производителя<br>крафтового кваса</p>
@@ -274,7 +272,7 @@
     <div class="footer-map-container">
       <!-- <img class="imgStretch" src="img/map2.png" width="1440" height="416" alt="расположение студии Нердс на карте. Адрес: Санкт-Петербург, ул. Б. Конюшенная, дом 19/8"> -->
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253002806!2d30.320858715677204!3d59.93871916905467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1615224923348!5m2!1sru!2sru"
-      width="100%" height="416" style="border:0;" allowfullscreen="" loading="lazy" title="расположение студии Нердс на карте. Адрес: Санкт-Петербург, ул. Б. Конюшенная, дом 19/8">
+      style="border:0;" allowfullscreen="" loading="lazy" title="расположение студии Нердс на карте. Адрес: Санкт-Петербург, ул. Б. Конюшенная, дом 19/8">
      </iframe>
     </div>
 
@@ -333,7 +331,7 @@
 
       <p class="letter-form-par">
         <label class="letter-form-label" for="letter-content">Текст письма:</label>
-        <textarea class="letter-message" rows="4" name="user-letter" id="letter-content" cols="30" rows="10">В свободной форме</textarea>
+        <textarea class="letter-message" rows="4" cols="30" name="user-letter" id="letter-content">В свободной форме</textarea>
       </p>
       <button class="button letter-form-button" type="submit">Отправить</button>
     </form>
