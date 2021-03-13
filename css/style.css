@@ -102,7 +102,7 @@
 .slider-controls {
 
   position: absolute;
-  bottom: 100px;
+  bottom: 109px;
   left: 40%;
   margin-left: 67px;
   z-index: 30;
@@ -125,7 +125,8 @@
   height: 18px;
 
   position: relative;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-left: 5px;
   background-color: #ffffff;
   border-radius: 50%;
   /*делаем прозрачную границу, потому, что у браузера
@@ -827,7 +828,7 @@ a.button-green:active {
   justify-items: center;
   border-top: 2px solid var(--basic-light-grey);
   border-bottom: 2px solid var(--basic-light-grey);
-  margin-bottom: 74px;
+  margin-bottom: 79px;
 }
 
 .partners-list-item {
@@ -841,7 +842,7 @@ a.button-green:active {
       align-self: center;
   justify-self: center;
   padding-top: 47px;
-  padding-bottom: 44px;
+  padding-bottom: 35px;
   position: relative;
   /* display: flex; */
   /* padding-right: 48px; */
@@ -919,18 +920,19 @@ align-self: center;
 .main-footer-address {
   position: absolute;
   top: 52px;
-  left: 0;
+  left: 2px;
 
-  height: 318px;
+  height: 308px;
   width: 310px;
 
   margin: 0;
   margin-left: 22px;
   /* transform: translate(0, 376px); */
   /* не вкатывает ((( */
-
+  padding-top: 5px;
   text-align: center;
   background-color: var(--basic-white);
+  overflow: auto;
 }
 .main-footer-address h3 {
   font-weight: bold;
@@ -1032,7 +1034,7 @@ align-self: center;
   grid-column: 1/5;
   padding: 0;
   margin: 0;
-  margin-top: 64px;
+  margin-top: 68px;
   margin-bottom: 68px;
 }
 .footer-right{
@@ -1040,7 +1042,7 @@ align-self: center;
   /* justify-self: start; */
   padding: 0;
   margin: 0;
-  margin-top: 71px;
+  margin-top: 75px;
   margin-bottom: 74px;
 }
 
@@ -1073,6 +1075,7 @@ align-self: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
 }
 
 
@@ -1553,6 +1556,7 @@ border: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
@@ -1687,7 +1691,7 @@ border: none;
 }
 .results-hover {
   width:360px;
-  height: 231px;
+  min-height: 231px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display:none;
@@ -1732,16 +1736,17 @@ border: none;
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-grey);
-
   margin-bottom: 32px;
   /*от переполнения*/
-  overflow: hidden;
+
   white-space: nowrap;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
-
-
+  /* -o-text-overflow: ellipsis;
+  text-overflow: ellipsis; */
+  /* overflow: hidden; */
+  /* overflow-y: scroll; */
+  overflow: auto;
 }
+
 /*будет кнопкой*/
 .price-button {
   padding: 17px 72px 15px 72px;
