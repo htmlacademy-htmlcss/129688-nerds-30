@@ -177,7 +177,7 @@ img {
   background-color:var(--basic-light-grey);
   /* outline: 3px solid rgba(0, 255, 0, 0.7);
   outline-offset: -5px; */
-  padding-top: 47px;
+  padding-top: 52px;
   margin-bottom: 0;
 }
 
@@ -259,6 +259,7 @@ img {
 
 
  }
+
 
 /*при фокусировка и наведении*/
 .site-navigation-item:focus,
@@ -445,7 +446,14 @@ background-color: var(--basic-light-grey);
   -ms-grid-column-align: end;
       justify-self: end;
 
+
 }
+/*
+.feature-image-block img {
+  display: block;
+  margin: 0;
+  padding: 0;
+} */
 
 .feature-item-title {
 font-weight: 500;
@@ -970,6 +978,7 @@ align-self: center;
 .main-footer-button {
   padding: 17px 44px 15px 44px;
   margin-top: 20px;
+  border: none;
 }
 
 
