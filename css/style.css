@@ -2026,6 +2026,7 @@ display:inline-block;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
 .letter-form input[type="text"],
 .letter-form input[type="email"],
 .letter-message {
@@ -2045,6 +2046,13 @@ display:inline-block;
   padding: 14px 14px 14px 14px;
 }
 .letter-message {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(4, 4, 4, 0.5);
+
   width: 760px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -2056,13 +2064,25 @@ display:inline-block;
 }
 
 
-.letter-form input:focus {
+.letter-form input:focus,
+.letter-form textarea:focus {
   border: 2px solid #000000;
+  color: rgba(4, 4, 4, 1);
+
 }
 
-.letter-form input:hover {
+
+.letter-form input:hover,
+.letter-form textarea:hover {
   border: 2px solid #b4b9bb;
 }
+
+input.form-input:invalid  {
+  border-color: var(--red);
+  color:var(--red);
+}
+
+
 
 .letter-form-par {
   font-style: normal;
@@ -2097,3 +2117,5 @@ display:inline-block;
   /* отключаем браузерный стиль */
   border: none;
 }
+
+
