@@ -179,11 +179,11 @@
               <li><a class="sort-section-link" href="">По типу</a></li>
               <li><a class="sort-section-link" href="">По названию</a></li>
               <li>
-                <a class="descending descending-active-item" href="" alt="Отсортировать по убыванию"></a>
+                <a class="descending descending-active-item" href="" aria-label="Отсортировать по убыванию"></a>
               </li>
               <!-- по-убыванию -->
               <li>
-                <a class="ascending" href="" alt="Отсортировать по возрастанию"></a>
+                <a class="ascending" href="" aria-label="Отсортировать по возрастанию"></a>
               </li>
               <!--можно добавить класс .ascending-active-item-->
             </ul>
@@ -339,27 +339,28 @@
   <section class="modal-letter">
     <div class="modal-wrapper">
       <h2>Напишите нам
-          <button class="modal-close" type="button"  aria-label="Закрыть"></button>
-        </h2>
+              <button class="modal-close" type="button" aria-label="Закрыть"></button>
+            </h2>
 
       <form class="letter-form" action="https://echo.htmlacademy.ru" method="post">
         <p class="letter-form-par">
           <label class="letter-form-label" for="form-name">Ваше имя</label>
-          <input class="form-name-input" id="form-name" type="text" name="user-name" placeholder="Имя Фамилия">
+          <input class="input-name form-input" id="form-name" type="text" name="user-name" placeholder="Имя Фамилия">
         </p>
         <p class="letter-form-par your-mail">
           <label class="letter-form-label" for="form-email">Ваш email:</label>
-          <input class="form-email-input" id="form-email" type="email" name="user-email" placeholder="email@example.com">
+          <input class="input-email form-input" id="form-email" type="email" name="user-email" placeholder="email@example.com">
         </p>
 
         <p class="letter-form-par">
           <label class="letter-form-label" for="letter-content">Текст письма:</label>
-          <textarea class="letter-message" rows="4" cols="30" name="user-letter" id="letter-content">В свободной форме</textarea>
+          <textarea class="letter-message form-input" rows="4" cols="30" name="user-letter" id="letter-content" placeholder="В свободной форме"></textarea>
         </p>
         <button class="button letter-form-button" type="submit">Отправить</button>
       </form>
     </div>
   </section>
+  <script src="/js/letter.min.js"></script>
 </body>
 
 </html>
