@@ -10,8 +10,8 @@
   <link rel="manifest" href="manifest.webmanifest">
   <!-- <link rel="stylesheet" href="css/normalize.css"> -->
   <link rel="stylesheet" href="css/normalize.min.css">
-  <link rel="stylesheet" href="css/style.min.css">
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <!-- <link rel="stylesheet" href="css/style.min.css"> -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page-body">
@@ -71,8 +71,8 @@
                   <div class="bar" style="width: 30%; margin-left: 20%">
                   </div>
                 </div>
-                <div class="toggle toggle-min" tabindex="0" style="left: 20%"></div>
-                <div class="toggle toggle-max" tabindex="0" style="left: 50%"></div>
+                <div class="toggle toggle-min" tabindex="0" style="left: 20%" aria-label="Установить минимальное значение стоимости"></div>
+                <div class="toggle toggle-max" tabindex="0" style="left: 50%" aria-label="Установить максимальное значение стоимости"></div>
                 <!-- <input class="range" type="range" min="0" max="15000" step="10"><br> -->
               </div>
               <div class="price-controls">
@@ -101,7 +101,7 @@
             <ul class="grid-view-list">
               <li class="grid-view-item">
                 <label class="grid-view-label" for="adaptive-grid">
-                  <input class="grid-view-radio" type="radio" name="grid-view" value="adaptive" id="adaptive-grid" checked>
+                  <input class="grid-view-radio" type="radio" name="grid-view" value="adaptive" id="adaptive-grid" checked aria-label="Выбрать адаптивную сетку">
                   <span class="radio-box"></span>
                   <span>Адаптивная</span>
                 </label>
@@ -109,14 +109,14 @@
 
               <li class="grid-view-item">
                 <label class="grid-view-label" for="fixed-grid">
-                  <input class="grid-view-radio" type="radio" name="grid-view" value="fixed" id="fixed-grid">
+                  <input class="grid-view-radio" type="radio" name="grid-view" value="fixed" id="fixed-grid" aria-label="Выбрать фиксированную сетку">
                   <span class="radio-box"></span>
                   <span>Фиксированная</span>
                 </label>
               </li>
               <li class="grid-view-item">
                 <label class="grid-view-label" for="rubber-grid">
-                  <input class="grid-view-radio" type="radio" name="grid-view" value="rubber" id="rubber-grid">
+                  <input class="grid-view-radio" type="radio" name="grid-view" value="rubber" id="rubber-grid" aria-label="Выбрать резиновую сетку">
                   <span class="radio-box"></span>
                   <span>Резиновая</span>
                 </label>
@@ -129,42 +129,42 @@
             <ul class="feature-list">
               <li class="feature-list-item">
                 <label class="check" for="filter-slider">
-                  <input class="check-input" type="checkbox" name="features-slider" id="filter-slider" checked>
+                  <input class="check-input" type="checkbox" name="features-slider" id="filter-slider" checked aria-label="Резиновая сетка выбрана">
                   <span class="check-box"></span>
                   <span>Слайдер</span>
                 </label>
               </li>
               <li class="feature-list-item">
                 <label class="check" for="filter-advantages">
-                  <input class="check-input" type="checkbox" name="features-advantages" id="filter-advantages">
+                  <input class="check-input" type="checkbox" name="features-advantages" id="filter-advantages" aria-label="Добавить блок преимуществ">
                   <span class="check-box"></span>
                   <span>Блок преимуществ</span>
                 </label>
               </li>
               <li class="feature-list-item">
                 <label class="check" for="filter-news">
-                  <input class="check-input" type="checkbox" name="features-news" id="filter-news" checked disabled>
+                  <input class="check-input" type="checkbox" name="features-news" id="filter-news" checked disabled aria-label="Блок новости выбран, добавлен по-умолчанию">
                   <span class="check-box"></span>
                   <span class="feature-list-disabled">Новости</span>
                 </label>
               </li>
               <li class="feature-list-item">
                 <label class="check" for="filter-galery">
-                  <input class="check-input" type="checkbox" name="features-galery" id="filter-galery">
+                  <input class="check-input" type="checkbox" name="features-galery" id="filter-galery" aria-label="Добавить галерею">
                   <span class="check-box"></span>
-                  <span>Галерея</span>t
+                  <span>Галерея</span>
                 </label>
               </li>
               <li class="feature-list-item">
                 <label class="check" for="filter-basket">
-                  <input class="check-input" type="checkbox" name="features-basket" id="filter-basket">
+                  <input class="check-input" type="checkbox" name="features-basket" id="filter-basket" aria-label="Добавить на сайт корзину">
                   <span class="check-box"></span>
                   <span>Корзина</span>
                 </label>
               </li>
             </ul>
           </fieldset>
-          <button class="features-button" type="submit">Показать</button>
+          <button class="features-button" type="submit" aria-label="Отсортировать и показать товары, выбранные по фильтрам">Показать</button>
         </form>
       </section>
       <div class="results-column">
@@ -179,11 +179,11 @@
               <li><a class="sort-section-link" href="">По типу</a></li>
               <li><a class="sort-section-link" href="">По названию</a></li>
               <li>
-                <a class="descending descending-active-item" href=""></a>
+                <a class="descending descending-active-item" href="" alt="Отсортировать по убыванию"></a>
               </li>
               <!-- по-убыванию -->
               <li>
-                <a class="ascending"></a>
+                <a class="ascending" href="" alt="Отсортировать по возрастанию"></a>
               </li>
               <!--можно добавить класс .ascending-active-item-->
             </ul>
@@ -196,14 +196,14 @@
           <ul class="results-list">
             <li class="card-container">
 
-              <img src="img/img-sedona.jpg" width="358" height="578" alt="Миниатура сайта SEDONA">
+              <img src="img/img-sedona.jpg" width="358" height="578" alt="Миниатюра сайта SEDONA">
 
               <div class="results-hover">
                 <!-- контейнер для hover -->
                 <h3><a href="#" class="results-link-title">SEDONA</a></h3>
                 <p class="results-hover-content">Информационный сайт
                   <br>для туристов</p>
-                <a class="button price-button" href="#">9 900 <span>&#8381;</span></a>
+                <button class="button price-button" aria-label="Купить сайт Седона">9 900 <span>&#8381;</span></button>
               </div>
 
             </li>
@@ -217,7 +217,7 @@
                 <h3><a href="#" class="results-link-title">Pink App</a></h3>
                 <p class="results-hover-content">Продвинутый лендинг
                   <br>приложения для iOS и Android</p>
-                <a class="button price-button" href="#">9 900 <span>&#8381;</span></a>
+                <button class="button price-button" aria-label="Купить сайт Pink">9 900 <span>&#8381;</span></button>
               </div>
             </li>
             <li class="card-container">
@@ -228,7 +228,7 @@
                 <h3><a href="#" class="results-link-title">Barbershop</a></h3>
                 <p class="results-hover-content">Сайт салона красоты.
                   <br>Для мужчин, да.</p>
-                <a class="button price-button" href="#">9 900 <span>&#8381;</span></a>
+                  <button class="button price-button" aria-label="Купить сайт Барбершоп">9 900 <span>&#8381;</span></button>
               </div>
             </li>
             <li class="card-container">
@@ -239,7 +239,7 @@
                 <h3><a href="#" class="results-link-title">Mishka</a></h3>
                 <p class="results-hover-content">Интернет магазин
                   <br>вязаных игрушек</p>
-                <a class="button price-button" href="#">9 900 <span>&#8381;</span></a>
+                  <button class="button price-button" aria-label="Купить сайт Мишка">9 900 <span>&#8381;</span></button>
               </div>
             </li>
             <li class="card-container">
@@ -250,7 +250,7 @@
                 <h3><a href="#" class="results-link-title">A Plus</a></h3>
                 <p class="results-hover-content">Лендинг курсов повышения
                   <br>квалификации</p>
-                <a class="button price-button" href="#">9 900 <span>&#8381;</span></a>
+                  <button class="button price-button" aria-label="Купить сайт A-plus">9 900 <span>&#8381;</span></button>
               </div>
             </li>
             <li class="card-container">
@@ -261,15 +261,15 @@
                 <h3><a href="#" class="results-link-title">Кваст</a></h3>
                 <p class="results-hover-content">Промо-сайт производителя
                   <br>крафтового кваса</p>
-                <a class="button price-button" href="#">9 900 <span>&#8381;</span></a>
+                  <button class="button price-button" aria-label="Купить сайт Кваст">9 900 <span>&#8381;</span></button>
               </div>
             </li>
           </ul>
           <ul class="pagination-list">
-            <li><a class="pagination-item pagination-item-active">1</a></li>
-            <li><a class="pagination-item" href="#">2</a></li>
-            <li><a class="pagination-item" href="#">3</a></li>
-            <li><a class="pagination-item-button" href="#">Следующая</a></li>
+            <li><button class="pagination-item pagination-item-active" aria-label="Первая группа товаров">1</button></li>
+            <li><button class="pagination-item" aria-label="Вторая группа товаров">2</button></li>
+            <li><button class="pagination-item" aria-label="Третья группа товаров">3</button></li>
+            <li><button class="pagination-item-button" aria-label="Следующая группа товаров">Следующая</button></li>
           </ul>
         </section>
       </div>

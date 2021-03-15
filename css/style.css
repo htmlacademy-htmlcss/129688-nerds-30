@@ -102,7 +102,7 @@
 .slider-controls {
 
   position: absolute;
-  bottom: 109px;
+  bottom: 97px;
   left: 40%;
   margin-left: 67px;
   z-index: 30;
@@ -177,8 +177,8 @@ img {
   background-color:var(--basic-light-grey);
   /* outline: 3px solid rgba(0, 255, 0, 0.7);
   outline-offset: -5px; */
-  padding-top: 52px;
-  margin-bottom: 0;
+  padding-top: 51px;
+  margin-bottom: -5px;
 }
 
 
@@ -448,12 +448,12 @@ background-color: var(--basic-light-grey);
 
 
 }
-/*
+
 .feature-image-block img {
   display: block;
   margin: 0;
   padding: 0;
-} */
+}
 
 .feature-item-title {
 font-weight: 500;
@@ -462,7 +462,7 @@ line-height: 55px;
 color: var(--basic-black);
 margin: 0;
 margin-top: 74px;
-margin-bottom: 25px;
+margin-bottom: 28px;
 
 }
 /*временно прячем 2 блока слайдера*/
@@ -471,7 +471,7 @@ margin-bottom: 25px;
 }
 
 .feature-item-content {
-  margin-bottom: 38px;
+  margin-bottom: 39px;
 }
 
 .button {
@@ -510,7 +510,7 @@ margin-bottom: 25px;
 /*Sirvices*/
 .services{
   /* outline: 5px solid rgba(255, 0, 0 , 0.3); */
-  padding-top: 65px;
+  padding-top: 78px;
 
 }
 .services-list {
@@ -1759,6 +1759,7 @@ border: none;
 /*будет кнопкой*/
 .price-button {
   padding: 17px 72px 15px 72px;
+  border: none;
 }
 .price-button:focus,
 .price-button:hover {
@@ -1860,6 +1861,7 @@ background-color: var(--basic-light-grey);
 margin-bottom: 10px;
 display:inline-block;
 /* box-sizing: border-box; */
+border: none;
 }
 
 .pagination-item:focus,
@@ -1919,7 +1921,7 @@ display:inline-block;
   margin-bottom: 10px;
   display:inline-block;
   /* box-sizing: border-box; */
-
+  border: none;
 }
 .pagination-item-button:focus,
 .pagination-item-button:hover {
